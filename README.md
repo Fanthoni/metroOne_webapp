@@ -1,15 +1,17 @@
-## My Web Application (Title)
+## Metro One (Title)
 
-* [General info](https://github.com/Fanthoni/metroOne_webapp
-)
-* [Technologies](#Technologies)
+* [General info](#general-info)
+* [Authors](#authors)
+* [Technologies](#technologies)
 * [Contents](#content)
 * [Author](#author)
 
 ## General Info
 This browser based web application to ...
 
-## Author
+## Authors
+Mark Theron - DuvalTries
+Ferrel Anthoni - Fanthoni
 Genie Park - gunehee6566	
 ## Technologies
 Technologies used for this project:
@@ -25,6 +27,7 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
+├── profile.html             # HTML file, this is what users see when they click profile/settings
 └── README.md
 
 It has the following subfolders and files:

@@ -1,12 +1,16 @@
 ## My Web Application (Title)
 
-* [General info](#general-info)
-* [Technologies](#technologies)
+* [General info](https://github.com/Fanthoni/metroOne_webapp
+)
+* [Technologies](#Technologies)
 * [Contents](#content)
+* [Author](#author)
 
 ## General Info
 This browser based web application to ...
-	
+
+## Author
+Genie Park - gunehee6566	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS

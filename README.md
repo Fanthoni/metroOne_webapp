@@ -1,4 +1,4 @@
-## My Web Application (Title)
+## My Web Application (MetroOne)
 
 * [General info](#general-info)
 * [Technologies](#technologies)

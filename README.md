@@ -1,11 +1,15 @@
-## My Web Application (Title)
+## Metro One (Title)
 
 * [General info](#general-info)
+* [Authors](#authors)
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## General Info
 This browser based web application to ...
+
+## Authors
+Mark Theron - DuvalTries
 	
 ## Technologies
 Technologies used for this project:
@@ -21,6 +25,7 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
+├── profile.html             # HTML file, this is what users see when they click profile/settings
 └── README.md
 
 It has the following subfolders and files:

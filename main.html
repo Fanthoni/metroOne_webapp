@@ -15,12 +15,12 @@
     <style>
         html{
             font-size: 16pt;
-            background-color: #29ABE2 ;
+            background-color: white;
         }
 
         header{
             position: fixed;
-            top: 0;
+            top: 0.5rem;
             width: 100%;
         }
 
@@ -32,11 +32,14 @@
         #menu{float: right;}
 
         .logo{
+
+            width: 200px;
+
             position: absolute;
             margin: 0;
             left: 50%;
             top: 0.5rem;
-            transform: translate(-50%);
+            transform: translate(-53%);
         }
 
         #directory img{
@@ -88,7 +91,7 @@
     <!------------------------------------------------------------>
     <header>
         <img src="./images/bell.png" class="icon" id="bell">
-        <img src="https://dummyimage.com/250x60/000/fff" class="logo">
+        <img src="./images/metrOneLogoText.png" class="logo">
         <img src="./images/hamburgerMenu.png" class="icon" id="menu">
     </header>
 
@@ -121,11 +124,26 @@
     </script>
 
     <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
+    <!-- JS files: Your own JavaScript functions included here    --------->
     <!--------------------------------------------------------------------->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        $(document).ready(function(){
+            console.log("I'm ready");
 
+            var isX = false;
+            $("#menu").on("click", function(event){
+                if(!isX){
+                    $(this).attr("src", "./images/letter-x.png");
+                    isX = true;
+                } else {
+                    $(this).attr("src", "./images/hamburgerMenu.png");
+                    isX = false;
+                }
+                
+            });
+
+        });
     </script>
 
 

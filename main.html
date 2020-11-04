@@ -12,8 +12,45 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Optional styles and scripts of your own -->
-    
+    <style>
+        html{
+            font-size: 16pt;
+            background-color: #29ABE2 ;
+        }
 
+        header{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .icon{
+            margin: 0.5rem;
+        }
+
+        #bell{float: left;}
+        #menu{float: right;}
+
+        .logo{
+            position: absolute;
+            margin: 0;
+            left: 50%;
+            top: 0.5rem;
+            transform: translate(-50%);
+        }
+
+        #directory img{
+            width: 80vw;
+            height: 80vh;
+
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -35%);
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +58,9 @@
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- Header Navigation Bar -->
+    <!-- Bootstrap Header Navigation Bar
+        not using it. -->
+    <!--
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="">myApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
@@ -41,11 +80,35 @@
             </ul>
         </div>
     </nav>
+    -->
+    
+    <!------------------------------------------------------------>
+    <!-- Header consists of the notification icon, the metrOne
+        logo and the menu button---->
+    <!------------------------------------------------------------>
+    <header>
+        <img src="./images/bell.png" class="icon" id="bell">
+        <img src="https://dummyimage.com/250x60/000/fff" class="logo">
+        <img src="./images/hamburgerMenu.png" class="icon" id="menu">
+    </header>
 
-    <h1>Welcome to Main</h1>
+    <!----------------------------------------->
+    <!-- The online directory. For now, we are 
+        just using dummy image to replace it.-->
+    <!----------------------------------------->
+    <div id="directory">
+        <img src="https://dummyimage.com/400x600/000/fff"/>
+    </div>
+
+    <!------------------------------------------>
+    <!------------Navigation bar---------------->
+    <!------------------------------------------>
+    <div id="navbar">
+
+    </div>
 
     <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
+    <!-- JS: Boostrap, Firebase, API related -->
     <!----------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -60,6 +123,11 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
+
+    <script>
+
+    </script>
+
 
 </body>
 </html>

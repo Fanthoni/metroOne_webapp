@@ -28,11 +28,17 @@
             margin: 0.5rem;
         }
 
+        .icon:hover{
+            cursor: pointer;
+        }
+
         #bell{float: left;}
-        #menu{float: right;}
+        #menu-icon{
+            float: right;
+            z-index: +1;
+        }
 
         .logo{
-
             width: 200px;
 
             position: absolute;
@@ -42,16 +48,43 @@
             transform: translate(-53%);
         }
 
+        #menu{
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: -85%;
+            transform: translate(0, -50%);
+
+            background-color: grey;
+            display: inline;
+            height: 100%;
+            width: 85%;
+            padding-top: 2rem;
+        }
+
+        #menu li{
+            list-style-type: none;
+            text-align: left;
+            margin-top: 1rem;
+            color: white;
+        }
+
         #directory img{
             width: 80vw;
-            height: 80vh;
+            height: 70vh;
 
             position: absolute;
             margin: 0;
             top: 50%;
             left: 50%;
             margin-right: -50%;
-            transform: translate(-50%, -35%);
+            transform: translate(-50%, -45%);
+        }
+
+        @media only screen and (max-width: 349px) {
+            .logo{
+                width: 170px;
+            }
         }
     </style>
 </head>
@@ -91,8 +124,8 @@
     <!------------------------------------------------------------>
     <header>
         <img src="./images/bell.png" class="icon" id="bell">
-        <img src="./images/metrOneLogoText.png" class="logo">
-        <img src="./images/hamburgerMenu.png" class="icon" id="menu">
+        <img src="./images/metrOneLogoText.png" class="logo icon">
+        <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
     </header>
 
     <!----------------------------------------->
@@ -108,6 +141,20 @@
     <!------------------------------------------>
     <div id="navbar">
 
+    </div>
+
+    <!------------------------------------------->
+    <!--Menu-->
+    <!------------------------------------------->
+    <div id="menu">
+        <ul>
+            <li>STORE RESERVATION</li>
+            <li>SAFETY PROTOCOLS</li>
+            <li>STORE LIST</li>
+            <li>SETTINGS</li>
+            <li>ABOUT US</li>
+            <li>CONTACT US</li>
+        </ul>
     </div>
 
     <!----------------------------------------------->
@@ -131,18 +178,31 @@
         $(document).ready(function(){
             console.log("I'm ready");
 
+
+            /* Variables for menu controlling*/
             var isX = false;
-            $("#menu").on("click", function(event){
+            var menuSlideIn = {"left": "-0%", "easing":"swing"};
+            var menuSlideOut = {"left": "-85%", "easing":"swing"};
+
+            /*
+            When the hamburger menu is clicked, it changes to letter-x icon
+            and the menu list is shown and vice versa.
+            */
+            $("#menu-icon").on("click", function(event){
                 if(!isX){
                     $(this).attr("src", "./images/letter-x.png");
                     isX = true;
+
+                    /* Slide in (show) the menu*/
+                    $("#menu").animate(menuSlideIn, 300);
                 } else {
                     $(this).attr("src", "./images/hamburgerMenu.png");
                     isX = false;
-                }
-                
-            });
 
+                    /* Slide out the menu*/
+                    $("#menu").animate(menuSlideOut, 300);
+                }
+            });
         });
     </script>
 

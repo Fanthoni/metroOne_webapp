@@ -17,8 +17,16 @@
     <!-- Optional styles and scripts of your own -->
     <style>
         .wrapper {
-            margin-top: 20%;
-            margin-bottom: 3%;
+            margin-top: 10vh;
+        }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -32,9 +40,11 @@
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- This is where the Login Widget will go -->
-    <h1 id="firebaseui-auth-container"></h1>
 
+    <!-- This is where the Login Widget will go -->
+    <div class="center">
+        <h1 id="firebaseui-auth-container"></h1>
+    </div>
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->

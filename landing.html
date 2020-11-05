@@ -14,8 +14,8 @@
     <!-- Optional styles and scripts of your own -->
     <style>
         .wrapper {
-            margin-top: 20%;
-            margin-bottom: 25%;
+            margin-top: 10vh;
+
         }
 
         .spaceButton {
@@ -24,6 +24,15 @@
 
         .button {
             width: 100%;
+        }
+
+        .signin {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -38,23 +47,24 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <div class="spaceButton">
-        <div class="d-flex justify-content-center">
-            <a href="sign-up.html">
-                <button type="button" class="btn btn-primary btn-lg button">
-                    Log in
-                </button>
-            </a>
+    <div class="signin">
+        <div class="spaceButton">
+            <div class="d-flex justify-content-center">
+                <a href="sign-up.html">
+                    <button type="button" class="btn btn-primary btn-lg button">
+                        Log in
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="spaceButton">
+            <div class="d-flex justify-content-center">
+                <a href="sign-up.html">
+                    <button type="button" class="btn btn-secondary btn-lg button">Sign up</button>
+                </a>
+            </div>
         </div>
     </div>
-    <div class="spaceButton">
-        <div class="d-flex justify-content-center">
-            <a href="sign-up.html">
-                <button type="button" class="btn btn-secondary btn-lg button">Sign up</button>
-            </a>
-        </div>
-    </div>
-
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->

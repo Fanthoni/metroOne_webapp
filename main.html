@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
+    <title>Welcome</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -12,8 +12,81 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Optional styles and scripts of your own -->
-    
+    <style>
+        html{
+            font-size: 16pt;
+            background-color: white;
+        }
 
+        header{
+            position: fixed;
+            top: 0.5rem;
+            width: 100%;
+        }
+
+        .icon{
+            margin: 0.5rem;
+        }
+
+        .icon:hover{
+            cursor: pointer;
+        }
+
+        #bell{float: left;}
+        #menu-icon{
+            float: right;
+            z-index: +1;
+        }
+
+        .logo{
+            width: 200px;
+
+            position: absolute;
+            margin: 0;
+            left: 50%;
+            top: 0.5rem;
+            transform: translate(-53%);
+        }
+
+        #menu{
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: -85%;
+            transform: translate(0, -50%);
+
+            background-color: grey;
+            display: inline;
+            height: 100%;
+            width: 85%;
+            padding-top: 2rem;
+        }
+
+        #menu li{
+            list-style-type: none;
+            text-align: left;
+            margin-top: 1rem;
+            color: white;
+        }
+
+        #directory img{
+            width: 80vw;
+            height: 70vh;
+
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -45%);
+        }
+
+        @media only screen and (max-width: 349px) {
+            .logo{
+                width: 170px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +94,9 @@
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-    <!-- Header Navigation Bar -->
+    <!-- Bootstrap Header Navigation Bar
+        not using it. -->
+    <!--
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="">myApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
@@ -41,11 +116,49 @@
             </ul>
         </div>
     </nav>
+    -->
+    
+    <!------------------------------------------------------------>
+    <!-- Header consists of the notification icon, the metrOne
+        logo and the menu button---->
+    <!------------------------------------------------------------>
+    <header>
+        <img src="./images/bell.png" class="icon" id="bell">
+        <img src="./images/metrOneLogoText.png" class="logo icon">
+        <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
+    </header>
 
-    <h1>Welcome to Main</h1>
+    <!----------------------------------------->
+    <!-- The online directory. For now, we are 
+        just using dummy image to replace it.-->
+    <!----------------------------------------->
+    <div id="directory">
+        <img src="https://dummyimage.com/400x600/000/fff"/>
+    </div>
+
+    <!------------------------------------------>
+    <!------------Navigation bar---------------->
+    <!------------------------------------------>
+    <div id="navbar">
+
+    </div>
+
+    <!------------------------------------------->
+    <!--Menu-->
+    <!------------------------------------------->
+    <div id="menu">
+        <ul>
+            <li>STORE RESERVATION</li>
+            <li>SAFETY PROTOCOLS</li>
+            <li>STORE LIST</li>
+            <li>SETTINGS</li>
+            <li>ABOUT US</li>
+            <li>CONTACT US</li>
+        </ul>
+    </div>
 
     <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
+    <!-- JS: Boostrap, Firebase, API related -->
     <!----------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -58,8 +171,41 @@
     </script>
 
     <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
+    <!-- JS files: Your own JavaScript functions included here    --------->
     <!--------------------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            console.log("I'm ready");
+
+
+            /* Variables for menu controlling*/
+            var isX = false;
+            var menuSlideIn = {"left": "-0%", "easing":"swing"};
+            var menuSlideOut = {"left": "-85%", "easing":"swing"};
+
+            /*
+            When the hamburger menu is clicked, it changes to letter-x icon
+            and the menu list is shown and vice versa.
+            */
+            $("#menu-icon").on("click", function(event){
+                if(!isX){
+                    $(this).attr("src", "./images/letter-x.png");
+                    isX = true;
+
+                    /* Slide in (show) the menu*/
+                    $("#menu").animate(menuSlideIn, 300);
+                } else {
+                    $(this).attr("src", "./images/hamburgerMenu.png");
+                    isX = false;
+
+                    /* Slide out the menu*/
+                    $("#menu").animate(menuSlideOut, 300);
+                }
+            });
+        });
+    </script>
+
 
 </body>
 </html>

@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Metro One</title>
+    <title>Landing</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -13,35 +12,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Optional styles and scripts of your own -->
-    
+    <style>
+    .wrapper {
+        margin-top: 15%;
+    }
+    .spaceButton {
+        margin-top: 3%;
+    }
+    .button{
+        width: 50%;
+    }
+        </style>
 
 </head>
 
 <body>
-
+    <div class="wrapper"><div class="d-flex justify-content-center"><img src="/images/metro1logo.png" alt="Logo" width="150" 
+        height="150"></div></div>
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">Metro One</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">my data</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">my profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">login/signup</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<div class="spaceButton"><div class="d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg button">Log in</button></div></div>
+<div class="spaceButton"><div class="d-flex justify-content-center"><button type="button" class="btn btn-secondary btn-lg button">Sign up</button></div></div>
 
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
@@ -59,10 +52,6 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    <div>
-        <p>WOW LOOK AT YOU</p>
-        <P>THIS IS YOUR PROFILE</P>
-        <h>Hi Welcome!</h>
-    </div>
+
 </body>
 </html>

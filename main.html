@@ -90,6 +90,83 @@
                 width: 170px;
             }
         }
+      
+        
+        #navbar{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          background-color: white;
+          width: 416px;
+          height: 80px;
+          margin: auto;    
+          grid-template-areas: 
+            "home sale favorite reservation";
+          border-radius: 25px; 
+          border: solid #333 0.1rem;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%);
+        }
+
+      #home {
+          grid-area: home;
+          justify-self: center;
+          align-self: center;
+      }
+
+      #sale {
+          grid-area: sale;
+          justify-self: center;
+          align-self: center;
+      }
+
+      #favorite {
+        grid-area: favorite;  
+        justify-self: center;
+        align-self: center;
+      }
+
+      #reservation {
+        grid-area: reservation;
+        justify-self: center;
+        align-self: center;
+      }
+
+      .button {
+        border-radius: 10px;
+      }
+      
+      #searchbar {
+        margin: auto;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%);
+        border-radius: 25px;
+      }
+      @media only screen and (min-width: 600px){
+        #navbar{
+          display: grid;
+          width: 75px;
+          height: 100vh;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr 6fr;
+          grid-template-areas:
+            "home"
+            "sale"
+            "favorite"
+            "reservation";
+          left: 0;
+          bottom: 50%;
+          transform: translate(0, 50%);
+        }
+        .icon {
+          margin-left: 100px;
+        }        
+      }
+      
+      
     </style>
 </head>
 
@@ -143,8 +220,11 @@
     <!------------------------------------------>
     <!------------Navigation bar---------------->
     <!------------------------------------------>
-    <div id="navbar">
-
+    <div id="navbar">      
+        <div id="home"><a href="main.html"><img src="https://dummyimage.com/50x50/000/fff&text=Home" alt="home" class="button"></a></div>
+        <div id="sale"><a href="sale.html"><img src="https://dummyimage.com/50x50/000/fff&text=Sale" alt="sale" class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="https://dummyimage.com/50x50/000/fff&text=Fav" alt="fav" class="button"></a></div>
+        <div id="reservation"><a href="reservation.html"><img src="https://dummyimage.com/50x50/000/fff&text=Res" alt="res" class="button"></a></div>       
     </div>
 
     <!------------------------------------------->

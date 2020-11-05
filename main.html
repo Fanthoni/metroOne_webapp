@@ -24,13 +24,8 @@
             width: 100%;
         }
 
-        .icon{
-            margin: 0.5rem;
-        }
-
-        .icon:hover{
-            cursor: pointer;
-        }
+        .icon{margin: 0.5rem;}
+        .icon:hover{cursor: pointer;}
 
         #bell{float: left;}
         #menu-icon{
@@ -67,6 +62,15 @@
             text-align: left;
             margin-top: 1rem;
             color: white;
+            
+        }
+
+        li a{color: white;}
+        li a:hover{color: white; animation-name: menuHover; animation-duration: 1s;}
+
+        @keyframes menuHover {
+            from{font-size: 16pt;}
+            to{font-size: 18pt;}
         }
 
         #directory img{
@@ -124,7 +128,7 @@
     <!------------------------------------------------------------>
     <header>
         <img src="./images/bell.png" class="icon" id="bell">
-        <img src="./images/metrOneLogoText.png" class="logo icon">
+        <a href="main.html"><img src="./images/metrOneLogoText.png" class="logo icon"></a>
         <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
     </header>
 
@@ -148,12 +152,12 @@
     <!------------------------------------------->
     <div id="menu">
         <ul>
-            <li>STORE RESERVATION</li>
-            <li>SAFETY PROTOCOLS</li>
-            <li>STORE LIST</li>
-            <li>SETTINGS</li>
-            <li>ABOUT US</li>
-            <li>CONTACT US</li>
+            <li><a href="store-reservation.html">STORE RESERVATION</a></li>
+            <li><a href="safety.html">SAFETY PROTOCOLS</a></li>
+            <li><a href="store-list.html">STORE LIST</a></li>
+            <li><a href="settings.html">SETTINGS</a></li>
+            <li><a href="about-us.html">ABOUT US</a></li>
+            <li><a href="contact-us.html">CONTACT US</a></li>
         </ul>
     </div>
 

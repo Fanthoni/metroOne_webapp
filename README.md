@@ -35,6 +35,7 @@ Content of the project folder:
 ├── store-reservation.html   # HTML file, where users see their list of store reservations
 ├── contact-us.html          # HTML file, where users can contact the developers
 ├── about-us.html            # HTML file, where users can read more about the developers and the app
+├── settings.html            # HTML file, where users configure their the app such as notifications, passwords, and profile
 └── README.md
 
 It has the following subfolders and files:

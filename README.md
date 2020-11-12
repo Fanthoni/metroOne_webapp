@@ -54,10 +54,12 @@ It has the following subfolders and files:
     /metrOneLogoText.png     # logo for everywhere else
     /direcotry.png           # the directory
 ├── scripts                  # Folder for scripts
-    /firebase_api_metro1.js  #
-    /login.js                #
+    /firebase_api_metro1.js  # Firebase API for the app's database 
+    /login.js                # 
+    /menu.js                 # Javascript file for the menu's functionality and animation
 ├── styles                   # Folder for styles
-    /blah.css                # 
+    /header.css              # Stylesheet for common navigation bar 
+    /navbar.css              # Stylesheet for common header
 
 Firebase hosting files: 
 ├── .firebaserc...

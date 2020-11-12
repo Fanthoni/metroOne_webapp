@@ -52,6 +52,7 @@ It has the following subfolders and files:
     /letter-x.png            # the letter 'x' icon to replace the menu icon when clicked and vice versa
     /metrOneLogo.png         # logo for landing page
     /metrOneLogoText.png     # logo for everywhere else
+    /direcotry.png           # the directory
 ├── scripts                  # Folder for scripts
     /firebase_api_metro1.js  #
     /login.js                #

@@ -1,0 +1,47 @@
+/* Stylesheet for the common navigation bar.*/
+
+#navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgb(213, 232, 240);
+    width: 85%;
+    height: 70px;
+    margin: auto;
+    grid-template-areas:
+        "home sale favorite reservation";
+    border-radius: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#home {
+    grid-area: home;
+    justify-self: center;
+    align-self: center;
+}
+
+#sale {
+    grid-area: sale;
+    justify-self: center;
+    align-self: center;
+}
+
+#favorite {
+    grid-area: favorite;
+    justify-self: center;
+    align-self: center;
+}
+
+#reservation {
+    grid-area: reservation;
+    justify-self: center;
+    align-self: center;
+}
+
+.button {
+    padding: 0.5rem;
+    border-radius: 10px;
+    background: rgb(213, 232, 240);
+}

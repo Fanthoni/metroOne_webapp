@@ -29,7 +29,7 @@
         
         .logo {
             width: 50px;
-            transform: translate(-300%, 10%);
+            transform: translate(-350%, 10%);
         }
       
       
@@ -37,60 +37,8 @@
             border-radius:15px;
         }
 
-        #profileWrap{
-            top: 0;
-            width: 100%;
-            height: 50vh;
-            background-color: rgb(213, 232, 240);
-            margin: 0;
-            border-radius: 15px;
-            z-index: -1;
-            text-align: center;
-            overflow: hidden;
-        }
-        
-        #profileWrap p {
-            font-weight: 600;
-            font-size: 1.25em;
-            padding: 0.5rem;
-        }
-        
-        #profilePic{
-            padding-top: 10vh;
-            justify-content: center;             
-            height 10vh;           
-        }
 
-        #back{
-            width: 25px;
-            float: left;
-        }
-        
-        #profileLink{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 60%;
-            height: 50%;
-            transform: translate(-50%);
-            text-align: center;
-            margin-top: 5vh;
-        }
-        
-        #profileLink li{
-            background-color: rgb(213, 232, 240);
-            list-style: none;
-            margin-bottom: 10vh;         
-            padding: 1vw;            
-            border-radius: 25px;
-            transform: translate(-10%);
-            font-size: 3vw;
-        }
-        
-        #edit-icon {
-            float: right;
-        }
-        
+
         
     </style>
     
@@ -103,10 +51,10 @@
         logo and the menu button--------------------------------->
     <!------------------------------------------------------------>
     <header>
-        <a href="settings.html"><img src="./images/back.png" class="icon" id="back"></a>
+        <img src="./images/bell.png" class="icon" id="bell">
         <a href="main.html"><img src="./images/metrOneLogo.png" class="logo icon"></a>
-        <p>Profile</p>
-        <img src="./images/edit.svg" class="icon" id="edit-icon">
+        <p>Notifications</p>
+        <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
         
     </header>
 
@@ -124,19 +72,7 @@
         </ul>
     </div>
 
-    <div id="profileWrap">
-        <img src="./images/profile.png" id="profilePic">
-        <div id="profileName"><p>John Smith</p></div>
-        <div id="profileEmail"><p>JohnSmith@gmail.com</p></div>
-    </div> 
-    
-    <div id="profileLink">
-        <ul>
-            <li><a href="feedback.html">Feed Backs</a></li>
-            <li><a href="subscription.html">Subscription</a></li>
-            <li><a href="reservation.html">Reservation</a></li>            
-        </ul>
-    </div> 
+
     
     
     <!----------------------------------------------->

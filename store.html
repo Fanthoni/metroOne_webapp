@@ -170,7 +170,7 @@
         function readQuote() {
             db.collection("stores").doc(callerID)
                 .onSnapshot(function (snap) {
-                    document.getElementById("store-name").innerText = snap.data().username;
+                    document.getElementById("store-name").innerText = snap.data().name;
                     document.getElementById("store-desc").innerText = snap.data().description;
                 })
         }

@@ -171,9 +171,10 @@
             // Store the id of the element that triggers the event
             var callerID;
 
-            $("map").hover(function (event) {
+            $("area").click(function (event) {
                 callerID = event.target.id;
                 console.log(callerID);
+                alert(callerID);
             });
         });
     </script>

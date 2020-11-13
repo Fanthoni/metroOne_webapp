@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Profile</title>
+    <title>Store Page</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -12,39 +11,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Optional styles and scripts of your own -->
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <style>
+        html {
+            font-size: 16pt;
+            background-color: white;
+        }
+
+        header p{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 2em;
+        }
+        
+        .logo {
+            width: 50px;
+            transform: translate(-300%, 10%);
+        }
+      
+      
+        input[type=text]{
+            border-radius:15px;
+        }
+
+        #profileWrap{
+            top: 0;
+            width: 100%;
+            height: 50vh;
+            background-color: rgb(213, 232, 240);
+            margin: 0;
+            border-radius: 15px;
+            z-index: -1;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        #profileWrap p {
+            font-weight: 600;
+            font-size: 1.25em;
+            padding: 0.5rem;
+        }
+        
+        #profilePic{
+            padding-top: 10vh;
+            justify-content: center;             
+            height: 10vh;           
+        }
+
+        #back{
+            width: 25px;
+            float: left;
+        }
+        
+        #profileLink{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 50%;
+            transform: translate(-50%);
+            text-align: center;
+            margin-top: 5vh;
+        }
+        
+        #profileLink li{
+            background-color: rgb(213, 232, 240);
+            list-style: none;
+            margin-bottom: 10vh;         
+            padding: 1vw;            
+            border-radius: 25px;
+            transform: translate(-10%);
+            font-size: 3vw;
+        }
+        
+        #edit-icon {
+            float: right;
+        }
+        
+        
+    </style>
     
 
 </head>
 
 <body>
+    <!------------------------------------------------------------>
+    <!------ Header consists of the notification icon, the metrOne
+        logo and the menu button--------------------------------->
+    <!------------------------------------------------------------>
+    <header>
+        <a href="settings.html"><img src="./images/back.png" class="icon" id="back"></a>
+        <a href="main.html"><img src="./images/metrOneLogo.png" class="logo icon"></a>
+        <p>Profile</p>
+        <img src="./images/edit.svg" class="icon" id="edit-icon">
+        
+    </header>
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">Metro One</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">my data</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">my profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">login/signup</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
+
+    <!--Menu-->
+    <div id="menu">
+        <ul>
+            <li><a href="store-reservation.html">STORE RESERVATION</a></li>
+            <li><a href="safety.html">SAFETY PROTOCOLS</a></li>
+            <li><a href="store-list.html">STORE LIST</a></li>
+            <li><a href="settings.html">SETTINGS</a></li>
+            <li><a href="about-us.html">ABOUT US</a></li>
+            <li><a href="contact-us.html">CONTACT US</a></li>
+        </ul>
+    </div>
+
+    <div id="profileWrap">
+        <img src="./images/profile.png" id="profilePic">
+        <div id="profileName"><p>John Smith</p></div>
+        <div id="profileEmail"><p>JohnSmith@gmail.com</p></div>
+    </div> 
+    
+    <div id="profileLink">
+        <ul>
+            <li><a href="feedback.html">Feed Backs</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+            <li><a href="reservation.html">Reservation</a></li>            
+        </ul>
+    </div> 
+    
+    
     <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
+    <!-- JS: Boostrap, Firebase, API related -->
     <!----------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -55,14 +151,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <script src="./scripts/firebase_api_metro1.js"></script>
+
 
     <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
+    <!-- JS files: Your own JavaScript functions included here    --------->
     <!--------------------------------------------------------------------->
-    <div>
-        <p>WOW LOOK AT YOU</p>
-        <P>THIS IS YOUR PROFILE</P>
-        <h>Hi Welcome!</h>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/menu.js"></script>
+
+    <!------------------------------------------>
+    <!------------Navigation bar---------------->
+    <!------------------------------------------>
+    <div id="navbar">
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
+                    class="button"></a></div>
+        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale"
+                    class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
+                    class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
+                    alt="res" class="button"></a></div>
     </div>
 </body>
+
 </html>

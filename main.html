@@ -31,8 +31,8 @@
             transform: translate(-50%, -45%);
         }
 
-        @media only screen and (min-width: 475px){
-            #directory img{
+        @media only screen and (min-width: 475px) {
+            #directory img {
                 width: 400px;
             }
         }
@@ -45,8 +45,8 @@
             transform: translate(-50%);
         }
 
-        input[type=text]{
-            border-radius:15px;
+        input[type=text] {
+            border-radius: 15px;
         }
 
         @media only screen and (min-width: 600px) {
@@ -90,12 +90,14 @@
         <img src="./images/directory.png" usemap="#image-map">
 
         <map name="image-map">
-            <area id="SPS" target="_self" alt="Superstore" title="Superstore" href="store.html"
+            <area id="01" target="_self" alt="Superstore" title="Superstore" href="store.html"
                 coords="697,41,1492,39,1497,736,1134,740,704,350" shape="poly">
             <area id="MCD" target="_self" alt="McDonald" title="McDonald" href="store.html" coords="1139,1247,1497,1538"
                 shape="rect">
-            <area id="NIK" target="_self" alt="NIKE" title="NIKE" href="store.html" coords="69,1184,442,1394" shape="rect">
-            <area id="HNM" target="_self" alt="H&amp;M" title="H&amp;M" href="store.html" coords="86,716,442,1012" shape="rect">
+            <area id="NIK" target="_self" alt="NIKE" title="NIKE" href="store.html" coords="69,1184,442,1394"
+                shape="rect">
+            <area id="HNM" target="_self" alt="H&amp;M" title="H&amp;M" href="store.html" coords="86,716,442,1012"
+                shape="rect">
             <area id="SCK" target="_self" alt="Sportchek" title="Sportchek" href="store.html"
                 coords="22,36,444,39,444,708,172,708,170,393,26,395,26,193" shape="poly">
         </map>
@@ -112,14 +114,11 @@
     <!------------Navigation bar---------------->
     <!------------------------------------------>
     <div id="navbar">
-        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
+        <div id="sale"><a href="settings.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
                     class="button"></a></div>
-        <div id="sale"><a href="settings.html"><img src="./images/settings.png" alt="sale"
-                    class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
-                    class="button"></a></div>
-        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
-                    alt="res" class="button"></a></div>
     </div>
 
     <!--Menu-->
@@ -146,6 +145,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+
+    <!-- Firebase libraries from CDN -->
+    <!--For all firebase in general-->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+    <!--MetrOne API-->
     <script src="./scripts/firebase_api_metro1.js"></script>
 
     <!--------------------------------------------------------------------->

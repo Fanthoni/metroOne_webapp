@@ -160,10 +160,21 @@
     <!--------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/menu.js"></script>
+    <script src="store.js"></script>
+
     <script>
-        $(document).ready(function(){
-            console.log(callerID);
-        });
+        callerID = localStorage.getItem("storeID");
+        console.log(callerID);
+        alert(callerID);
+
+        function readQuote() {
+            db.collection("stores").doc(callerID)
+                .onSnapshot(function (snap) {
+                    document.getElementById("store-name").innerText = snap.data().username;
+                    document.getElementById("store-desc").innerText = snap.data().description;
+                })
+        }
+        readQuote();
     </script>
 
 

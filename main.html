@@ -21,7 +21,8 @@
         }
 
         #directory img {
-            width: 80vw;
+            width: 300px;
+            height: 300px;
 
             position: absolute;
             margin: 0;
@@ -33,7 +34,7 @@
 
         @media only screen and (min-width: 475px) {
             #directory img {
-                width: 400px;
+                width: 300px;
             }
         }
 
@@ -90,17 +91,19 @@
         <img src="./images/directory.png" usemap="#image-map">
 
         <map name="image-map">
-            <area id="01" target="_self" alt="Superstore" title="Superstore" href="store.html"
-                coords="697,41,1492,39,1497,736,1134,740,704,350" shape="poly">
-            <area id="MCD" target="_self" alt="McDonald" title="McDonald" href="store.html" coords="1139,1247,1497,1538"
+            <area id="SPS" target="_self" alt="Superstore" title="Superstore" href="store.html"
+                coords="135,59,225,135,293,136,291,2,136,0" shape="poly">
+            <area id="MCD" target="_self" alt="McDonald" title="McDonald" href="store.html" coords="221,234,293,290"
                 shape="rect">
-            <area id="NIK" target="_self" alt="NIKE" title="NIKE" href="store.html" coords="69,1184,442,1394"
-                shape="rect">
-            <area id="HNM" target="_self" alt="H&amp;M" title="H&amp;M" href="store.html" coords="86,716,442,1012"
+            <area id="NIK" target="_self" alt="NIKE" title="NIKE" href="store.html" coords="12,223,86,262"
                 shape="rect">
             <area id="SCK" target="_self" alt="Sportchek" title="Sportchek" href="store.html"
-                coords="22,36,444,39,444,708,172,708,170,393,26,395,26,193" shape="poly">
+                coords="3,0,85,0,85,124,30,127,33,70,3,69" shape="poly">
+            <area id="HNM" target="_self" alt="H&amp;M" title="H&amp;M" href="store.html" coords="19,131,85,188"
+                shape="rect">
         </map>
+
+
     </div>
 
     <!---------------->
@@ -148,7 +151,7 @@
 
     <!-- Firebase libraries from CDN -->
     <!--For all firebase in general-->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
@@ -161,6 +164,19 @@
     <!--------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/menu.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // Store the id of the element that triggers the event
+            var callerID;
+
+            $("map").hover(function (event) {
+                callerID = event.target.id;
+                console.log(callerID);
+            });
+        });
+    </script>
 
 </body>
 

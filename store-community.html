@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Store community</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="styles/navbar.css">
+    <style>
+        html {
+            font-size: 16pt;
+            background-color: white;
+        }
+
+        #review-btn {
+            width: 250px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: 80px;
+            border-radius: 20px;
+        }
+
+        #store-logo {
+            height: 50px;
+            width: auto;
+            margin-top: 0.5rem;
+            display: inline;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #content {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Store logo-->
+    <!--Logo will change depending on the store selected-->
+    <img alt="store-logo" id="store-logo" src="https://dummyimage.com/100x100/000/fff">
+
+    <!--Store rating-->
+    <div id="store-rate">
+
+    </div>
+
+    <!--People's comment/review-->
+    <div id="content">
+        <div class="media">
+            <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky">
+            <div class="media-body">
+                <h5 class="mt-0 user-name">The user name goes here</h5>
+                <p>User comments goes here</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--Write a review button-->
+    <a href="feedback.html" class="btn btn-outline-dark" id="review-btn"><img src="./images/writing.png" /> WRITE A
+        REVIEW</a>
+
+
+    <!------------------------------------------>
+    <!------------Navigation bar---------------->
+    <!------------------------------------------>
+    <div id="navbar">
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
+        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
+                    class="button"></a></div>
+    </div>
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related -->
+    <!----------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!--Firebase API-->
+    <script src="./scripts/firebase_api_metro1.js"></script>
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    --------->
+    <!--------------------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/store-community.js"></script>
+
+</body>
+
+</html>

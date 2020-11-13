@@ -14,7 +14,8 @@
     <!-- Optional styles and scripts of your own -->
     <style>
         .wrapper {
-            margin-top: 15%;
+            margin-top: 10vh;
+
         }
 
         .spaceButton {
@@ -22,7 +23,16 @@
         }
 
         .button {
-            width: 50%;
+            width: 100%;
+        }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -67,6 +77,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
+        
+    <!-- Firebase libraries from CDN -->
+    <!--For all firebase in general-->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+    <!--Firebase API-->
+    <script src="./scripts/firebase_api_metro1.js"></script>
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->

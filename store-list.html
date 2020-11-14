@@ -79,16 +79,14 @@
     <!---------------->
     <!--Search Bar -->
     <!--------------->
-    <div id="searchbar">
-        <input type="text" placeholder="       search store here">
-    </div>
+    <input id="searchbar" type="text" placeholder="       search store here">
 
     <!--Menu-->
     <div id="menu">
         <ul>
             <li><a href="store-reservation.html">STORE RESERVATION</a></li>
             <li><a href="safety.html">SAFETY PROTOCOLS</a></li>
-            <li><a href="store-list.html">STORE LIST</a></li>
+            <li><a id="toDefaultStoreList" href="store-list.html">STORE LIST</a></li>
             <li><a href="settings.html">SETTINGS</a></li>
             <li><a href="about-us.html">ABOUT US</a></li>
             <li><a href="contact-us.html">CONTACT US</a></li>
@@ -150,6 +148,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/menu.js"></script>
     <script src="scripts/store.js"></script>
+    <script src="./scripts/searchbar.js"></script>
+
+    <script>
+        var todo = localStorage.getItem("userSearchFor");
+        console.log(todo);
+
+        // If to do is not null 
+        // (meaning the user search store from searchbar)
+        if(todo !== "null"){
+            // erase all the list in the DOM
+            
+
+            // Iterate through the store in the databse
+            // and compare each store's name value to user's input
+
+            // All store name that "contains" the value of the 
+            // user input should be recorded and 
+
+            // made an array (list) of the id of that store
+
+            // if the list is blank
+                // show nothing in the store list
+                // a text/image with no store found(?)
+
+            // if the list is NOT blank, 
+                // get the name of the store in that list
+                // and append the list of store with that store name
+
+        }
+    </script>
 
     
 </body>

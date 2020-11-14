@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    console.log("I'm ready");
-
     /* Variables for menu controlling*/
     var isX = false;
     var menuSlideIn = {"left": "-0%", "easing": "swing"};
@@ -25,4 +23,15 @@ $(document).ready(function () {
             $("#menu").animate(menuSlideOut, 300);
         }
     });
+
+    /*
+    When the user clicks on the store list, set the local storage
+    "userSearchFor" to null. If the userSearchFor equals to null, 
+    then we want to show every store in the database.
+    */
+    var storeListMenu = document.getElementById("toDefaultStoreList");
+    storeListMenu.addEventListener("click", function(e){
+        localStorage.setItem("userSearchFor", "null");
+    });
+
 });

@@ -59,6 +59,13 @@
         #btn-favourite{
             float: right;
         }
+
+        @media only screen and (min-width: 475px) {
+            #store-image{
+                width: 500px;
+            }
+
+        }
     </style>
 
 </head>
@@ -96,7 +103,7 @@
 
     <!--The shop main info and actions-->
     <div class="card">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/000/fff" alt="Card image cap">
+        <img class="card-img-top" id="store-image" src="https://dummyimage.com/600x400/000/fff" alt="Card image cap">
         <div class="card-body">
             <div id="store-status">
                 <p id="average-rate">0.0</p>
@@ -170,7 +177,7 @@
         function readQuote() {
             db.collection("stores").doc(callerID)
                 .onSnapshot(function (snap) {
-                    document.getElementById("store-name").innerText = snap.data().username;
+                    document.getElementById("store-name").innerText = snap.data().name;
                     document.getElementById("store-desc").innerText = snap.data().description;
                 })
         }

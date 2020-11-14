@@ -20,51 +20,50 @@
             background-color: white;
         }
 
-        header p{
+        header p {
             position: absolute;
             left: 50%;
             transform: translate(-50%);
             font-size: 2em;
         }
-        
+
         .logo {
             width: 50px;
             transform: translate(-300%, 10%);
         }
-      
-      
-        input[type=text]{
-            border-radius:15px;
+
+
+        input[type=text] {
+            border-radius: 15px;
         }
 
-        #settingWrap{
+        #settingWrap {
             position: absolute;
             left: 50%;
             top: 50%;
-            width: 60%;
+            width: 60vw;
             height: 60%;
             transform: translate(-50%, -50%);
             text-align: center;
             margin: 0;
         }
-        
-        #settingWrap li{
+
+        #settingWrap li {
             background-color: rgb(213, 232, 240);
             list-style: none;
-            margin-bottom: 10vh;         
-            padding: 1vw;            
+            margin-bottom: 1rem;
+            padding: 0.7rem;
             border-radius: 25px;
             transform: translate(-10%);
-            font-size: 3vw;
+            font-size: 1.6rem;
         }
-        
+
         #back {
             width: 25px;
             float: left;
         }
-        
     </style>
-    
+
 
 </head>
 
@@ -75,10 +74,9 @@
     <!------------------------------------------------------------>
     <header>
         <a href="main.html"><img src="./images/back.png" class="icon" id="back"></a>
-        <a href="main.html"><img src="./images/metrOneLogo.png" class="logo icon"></a>
         <p>Settings</p>
         <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
-        
+
     </header>
 
 
@@ -102,10 +100,19 @@
             <li><a href="notification.html">Notification</a></li>
             <li><a href="landing.html">Logout</a></li>
         </ul>
-    </div> 
-    
-    
-    
+    </div>
+
+    <!------------------------------------------>
+    <!------------Navigation bar---------------->
+    <!------------------------------------------>
+    <div id="navbar">
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
+        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
+                    class="button"></a></div>
+    </div>
+
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related -->
     <!----------------------------------------------->
@@ -118,8 +125,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="./scripts/firebase_api_metro1.js"></script>
 
+
+    <!-- Firebase libraries from CDN -->
+    <!--For all firebase in general-->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+    <!--Firebase API-->
+    <script src="./scripts/firebase_api_metro1.js"></script>
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    --------->
@@ -127,19 +143,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/menu.js"></script>
 
-    <!------------------------------------------>
-    <!------------Navigation bar---------------->
-    <!------------------------------------------>
-    <div id="navbar">
-        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
-                    class="button"></a></div>
-        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale"
-                    class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
-                    class="button"></a></div>
-        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
-                    alt="res" class="button"></a></div>
-    </div>
 </body>
 
 </html>

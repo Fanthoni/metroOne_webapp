@@ -167,13 +167,13 @@
     <!--------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/menu.js"></script>
-    <script src="store.js"></script>
-
+    <script src="scripts/store.js"></script>
+    
     <script>
         callerID = localStorage.getItem("storeID");
         console.log(callerID);
         alert(callerID);
-
+       
         function readQuote() {
             db.collection("stores").doc(callerID)
                 .onSnapshot(function (snap) {
@@ -183,7 +183,7 @@
         }
         readQuote();
     </script>
-
+ 
 
 </body>
 

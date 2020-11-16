@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+        <meta charset="utf-8">
+        <title>Store Page</title>
+        <meta name="comp1800 boilerplate code" content="my bcit project">
+        <meta name="author" content="BCIT">
+           
+        <!-- Bootstrap for Mobile-first, and JQuery -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- Firebase CSS for Authentication UI -->
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="./styles/reservation.css">
+       
+   
+</head>
+
+<body>    
+  <div id="wrapper">
+    <div class="form-container">
+      <span class="form-heading">Reserve</span>      
+      <form class="form">
+        <div class="input-field">
+          <input type="text" id="name" placeholder="Name"> 
+          <span class="bar"></span>          
+        </div>        
+        <div class="input-field">
+          <input type="time" id="time" placeholder="Time">
+          <span class="bar"></span>          
+        </div>
+        <div class="input-field">
+          <input type="number" id="groupSize" placeholder="Number of Guests">
+          <span class="bar"></span>          
+        </div>
+          <div class="input-field">
+          <button id="button">Reserve!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBoCL1wQKiNt79LLA8bULkRINSUZYHIUZE",
+    authDomain: "metroone-dc7a7.firebaseapp.com",
+    databaseURL: "https://metroone-dc7a7.firebaseio.com",
+    projectId: "metroone-dc7a7",
+    storageBucket: "metroone-dc7a7.appspot.com",
+    messagingSenderId: "615837117933",
+    appId: "1:615837117933:web:19ac359765c1f992174be4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const res = firebase.firestore()
+</script>
+
+<script src="./scripts/res.js"></script>
+
+</body>
+</html

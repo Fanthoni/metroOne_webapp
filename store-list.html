@@ -28,11 +28,11 @@
             transform: translate(-50%);
         }
 
-        input[type=text]{
-            border-radius:15px;
+        input[type=text] {
+            border-radius: 15px;
         }
-        
-        #storeList{
+
+        #storeList {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -40,26 +40,38 @@
             height: 60%;
             transform: translate(-50%, -50%);
             text-align: center;
-            margin: 0;
+            
             z-index: -1;
-        }
-        
-        #storeList li{
-            background-color: rgb(213, 232, 240);
-            list-style: none;
-            margin: 10vh;         
-            border-radius: 25px;
-            height: 10vh;
-            transform: translate(-7%, 0);
-        }
-        
-        .storeLogo {
-            display: inline-block;
-            height: 100%;
-            vertical-align: middle;
-            padding: 1rem;
+
         }
 
+        #storeList ul{
+            padding-bottom: 5rem;
+        }
+
+        #storeList li {
+            background-color: rgb(213, 232, 240);
+            border-radius: 25px;
+            list-style: none;
+
+            margin-bottom: 1rem;
+            left: 50%;
+            transform: translate(-57%, 0);
+            position: relative;
+
+            height: 10vh;
+            width: 60vw;
+        }
+
+        #storeList a {
+            color: black;
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -60%);
+        }
     </style>
 
 </head>
@@ -92,15 +104,10 @@
             <li><a href="contact-us.html">CONTACT US</a></li>
         </ul>
     </div>
-    
+
     <!----Store List ---->
     <div id="storeList">
         <ul>
-            <li><a class="store" id="HNM" href="store.html"><img src="images/HM_Logo.png" class="storeLogo"></a></li>
-            <li><a class="store" id="SPS" href="store.html"><img src="images/Superstore_logo.png" class="storeLogo"></a></li>
-            <li><a class="store" id="NIK" href="store.html"><img src="images/Nike_logo.png" class="storeLogo"></a></li>
-            <li><a class="store" id="SCK" href="store.html"><img src="images/SportChek_logo.png" class="storeLogo"></a></li>
-            <li><a class="store" id="MCD" href="store.html"><img src="images/McDonalds_logo.png" class="storeLogo"></a></li>
         </ul>
     </div>
 
@@ -108,16 +115,13 @@
     <!------------Navigation bar---------------->
     <!------------------------------------------>
     <div id="navbar">
-        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
+        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
                     class="button"></a></div>
-        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale"
-                    class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
-                    class="button"></a></div>
-        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
-                    alt="res" class="button"></a></div>
     </div>
-    
+
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related -->
     <!----------------------------------------------->
@@ -133,7 +137,7 @@
 
     <!-- Firebase libraries from CDN -->
     <!--For all firebase in general-->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
@@ -150,36 +154,62 @@
     <script src="scripts/store.js"></script>
     <script src="./scripts/searchbar.js"></script>
 
+    <!--Script only for store-list.html-->
     <script>
-        var todo = localStorage.getItem("userSearchFor");
-        console.log(todo);
+        var toSearch = localStorage.getItem("userSearchFor");
+        toSearch = toSearch.toLowerCase();
+        console.log(toSearch);
 
-        // If to do is not null 
-        // (meaning the user search store from searchbar)
-        if(todo !== "null"){
-            // erase all the list in the DOM
-            
+        // If to do is NOT null 
+        // meaning the user search store from searchbar
+        if (toSearch !== "null") {
+            // Empty out all the list in the DOM
+            $("#storeList ul").empty();
+
+            // An array to store the id of stores that matches based
+            // user search
+            var listOfStoreID = [];
 
             // Iterate through the store in the databse
             // and compare each store's name value to user's input
+            db.collection("stores").get().then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    //  Comparing store name with the user input
+                    // if mathces at the store id into the array
+                    if (doc.data().name.toLowerCase().includes(toSearch)) {
+                        listOfStoreID.push(doc.id);
 
-            // All store name that "contains" the value of the 
-            // user input should be recorded and 
+                        var thisStore = $("<li></li>");
+                        $("#storeList ul").append(thisStore);
 
-            // made an array (list) of the id of that store
+                        var thisStoreLink = $("<a class='store' href='store.html'></a>");
+                        $(thisStore).append(thisStoreLink);
+                        $(thisStoreLink).attr('id', doc.id);
+                        $(thisStoreLink).append(doc.data().name);
+                    }
+                });
+                //console.log(listOfStoreID);
 
-            // if the list is blank
-                // show nothing in the store list
-                // a text/image with no store found(?)
+                if (listOfStoreID.length === 0) {
+                    $("#storeList").append("No Store Found");
+                }
+            });
+        } else {
+            db.collection("stores").get().then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                        var thisStore = $("<li></li>");
+                        $("#storeList ul").append(thisStore);
 
-            // if the list is NOT blank, 
-                // get the name of the store in that list
-                // and append the list of store with that store name
-
-        }
+                        var thisStoreLink = $("<a class='store' href='store.html'></a>");
+                        $(thisStore).append(thisStoreLink);
+                        $(thisStoreLink).attr('id', doc.id);
+                        $(thisStoreLink).append(doc.data().name);
+                    })
+                });
+            }
     </script>
 
-    
+
 </body>
 
 </html>

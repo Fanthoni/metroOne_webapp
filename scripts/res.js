@@ -6,7 +6,7 @@ const addNewReservation = () => {
       time: form.time.value,
       groupSize: form.groupSize.value,            
     }
-      res.collection('Reservations').add(reservation)
+      db.collection('Reservations').add(reservation)
       .then(() => {
       // Reset the form values
       form.name.value = "",

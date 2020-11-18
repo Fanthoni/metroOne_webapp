@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    background-color: rgba(33, 93, 206, 0.1);    
+    background-color: rgba(254, 254, 255, 0.1);    
 }
 
 #wrapper{
@@ -69,5 +69,6 @@ form{
 
 #button{
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
+    font-size: 3rem;
 }

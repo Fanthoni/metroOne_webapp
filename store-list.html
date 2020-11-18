@@ -40,12 +40,12 @@
             height: 60%;
             transform: translate(-50%, -50%);
             text-align: center;
-            
+
             z-index: -1;
 
         }
 
-        #storeList ul{
+        #storeList ul {
             padding-bottom: 5rem;
         }
 
@@ -197,16 +197,16 @@
         } else {
             db.collection("stores").get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
-                        var thisStore = $("<li></li>");
-                        $("#storeList ul").append(thisStore);
+                    var thisStore = $("<li></li>");
+                    $("#storeList ul").append(thisStore);
 
-                        var thisStoreLink = $("<a class='store' href='store.html'></a>");
-                        $(thisStore).append(thisStoreLink);
-                        $(thisStoreLink).attr('id', doc.id);
-                        $(thisStoreLink).append(doc.data().name);
-                    })
-                });
-            }
+                    var thisStoreLink = $("<a class='store' href='store.html'></a>");
+                    $(thisStore).append(thisStoreLink);
+                    $(thisStoreLink).attr('id', doc.id);
+                    $(thisStoreLink).append(doc.data().name);
+                })
+            });
+        }
     </script>
 
 

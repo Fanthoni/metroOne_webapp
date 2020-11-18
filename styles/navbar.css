@@ -45,3 +45,10 @@
     border-radius: 10px;
     background: rgb(213, 232, 240);
 }
+
+@media only screen and (min-width: 500px) {
+    /* Make navbar fix after this size */
+    #navbar{
+        width: 380px;
+    }
+}

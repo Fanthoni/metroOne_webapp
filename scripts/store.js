@@ -13,11 +13,12 @@ $(document).ready(function () {
   });
 
   // From the store list
-  $('a[class="store"]').click(function (event) {
+  $('li a[class="store"]').click(function (event) {
     callerID = event.target.id;
     console.log(callerID);
     alert(callerID);
     localStorage.setItem("storeID", callerID);
-});
+  });
+  
 });
 

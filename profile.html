@@ -40,7 +40,7 @@
         #profileWrap{
             top: 0;
             width: 100%;
-            height: 50vh;
+            height: 30vh;
             background-color: rgb(213, 232, 240);
             margin: 0;
             border-radius: 15px;
@@ -68,23 +68,28 @@
         
         #profileLink{
             position: absolute;
-            top: 50%;
+            top: 35%;
             left: 50%;
             width: 60%;
             height: 50%;
             transform: translate(-50%);
             text-align: center;
-            margin-top: 5vh;
+            margin-top: 2vh;
         }
         
         #profileLink li{
             background-color: rgb(213, 232, 240);
             list-style: none;
-            margin-bottom: 10vh;         
+            margin-bottom: 5vh;         
             padding: 1vw;            
             border-radius: 25px;
             transform: translate(-10%);
-            font-size: 3vw;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+
+        #profileLink a{
+            color: black;
         }
         
         #edit-icon {
@@ -104,9 +109,8 @@
     <!------------------------------------------------------------>
     <header>
         <a href="settings.html"><img src="./images/back.png" class="icon" id="back"></a>
-        <a href="main.html"><img src="./images/metrOneLogo.png" class="logo icon"></a>
         <p>Profile</p>
-        <img src="./images/edit.svg" class="icon" id="edit-icon">
+        <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
         
     </header>
 
@@ -117,7 +121,7 @@
         <ul>
             <li><a href="store-reservation.html">STORE RESERVATION</a></li>
             <li><a href="safety.html">SAFETY PROTOCOLS</a></li>
-            <li><a href="store-list.html">STORE LIST</a></li>
+            <li><a id="toDefaultStoreList" href="store-list.html">STORE LIST</a></li>
             <li><a href="settings.html">SETTINGS</a></li>
             <li><a href="about-us.html">ABOUT US</a></li>
             <li><a href="contact-us.html">CONTACT US</a></li>
@@ -132,11 +136,25 @@
     
     <div id="profileLink">
         <ul>
-            <li><a href="feedback.html">Feed Backs</a></li>
-            <li><a href="subscription.html">Subscription</a></li>
-            <li><a href="reservation.html">Reservation</a></li>            
+            <li><a href="feedback.html">My Feedbacks</a></li>
+            <li><a href="favorite.html">My Subscription</a></li>
+            <li><a href="reservation.html">My Reservation</a></li>       
         </ul>
     </div> 
+
+    <!------------------------------------------>
+    <!------------Navigation bar---------------->
+    <!------------------------------------------>
+    <div id="navbar">
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
+                    class="button"></a></div>
+        <div id="sale"><a href="settings.html"><img src="./images/settings-current.png" alt="sale"
+                    class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
+                    class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
+                    alt="res" class="button"></a></div>
+    </div>
     
     
     <!----------------------------------------------->
@@ -151,6 +169,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+
+    <!-- Firebase libraries from CDN -->
+    <!--For all firebase in general-->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+    <!--Firebase API-->
     <script src="./scripts/firebase_api_metro1.js"></script>
 
 
@@ -159,20 +186,20 @@
     <!--------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/menu.js"></script>
+    <script>
+        var userID = localStorage.getItem("thisUserID");
+        
+        function readQuote() {
+            db.collection("users").doc(userID)
+                .onSnapshot(function (snap) {
+                    $("#profileName").html("<p>" + snap.data().name + "</p>");
+                    $("#profileEmail").html("<p>" + snap.data().email + "</p>");
+                })
+        }
+        readQuote();
+    </script>
 
-    <!------------------------------------------>
-    <!------------Navigation bar---------------->
-    <!------------------------------------------>
-    <div id="navbar">
-        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
-                    class="button"></a></div>
-        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale"
-                    class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
-                    class="button"></a></div>
-        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
-                    alt="res" class="button"></a></div>
-    </div>
+    
 </body>
 
 </html>

@@ -14,12 +14,13 @@ Mark Theron - DuvalTries
 Ferrel Anthoni - Fanthoni
 Genie Park - gunehee6566	
 Jun mo An - JamesAn92
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
-* JavaScript
-* Bootstrap 
-* ...
+* JavaScript, jQuery
+* Bootstrap
+* Firebase
 	
 ## Content
 Content of the project folder:
@@ -42,24 +43,43 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /home.png                # home icon to go back to directory (home)
-    /heart.png               # heart icon for favourited store list
-    /reservation.png         # calendar icon for the reservation button
-    /settings.png            # gear icon for the settings button
+    /back.png                # a back button to go to the previous screen
     /bell.png                # bell notification icon
     /bellNotified.png        # new notification(s) bell icon
+    /directory.png           # the store's directory (main page)
+    /edit.svg                # edit icon
+    /fav-current             # heart icon if the user is currently at favorite.html screen
     /hamburgerMenu.png       # hamburger menu icon
+    /heart-liked.png         # the icon displayed at the store page when the user liked the store
+    /heart.png               # heart icon for favourited store list and navbar
+    /home-current.png        # home icon when the user is AT the home screen
+    /home.png                # home icon to go back to directory (home)
     /letter-x.png            # the letter 'x' icon to replace the menu icon when clicked and vice versa
+    /metro1logo.png          #
+    /metro1logo2.png         #
     /metrOneLogo.png         # logo for landing page
     /metrOneLogoText.png     # logo for everywhere else
-    /direcotry.png           # the directory
+    /reservation.png         # calendar icon for the reservation button at the navbar
+    /reserve-current.png     # calendar icon if the user is currently at the reservation screen
+    /settings-current.png    # gear icon if the user is currently at the settings menu
+    /settings.png            # gear icon for the settings button placed at the navbar
+    /star.png                # 
+    /writing.png             # edit icon for community feedback/rating
+    
+
 ├── scripts                  # Folder for scripts
     /firebase_api_metro1.js  # Firebase API for the app's database 
-    /login.js                # 
+    /login.js                # user authentication script
     /menu.js                 # Javascript file for the menu's functionality and animation
+    /res.js                  # 
+    /searchbar.js            # Store search functionality of the serachbar
+    /store.js                # Listens to which store is being requested from the event
+    /write.js                # write a new store information to the datbase
+
 ├── styles                   # Folder for styles
     /header.css              # Stylesheet for common navigation bar 
     /navbar.css              # Stylesheet for common header
+    /reservation.css         # Stylesheet for reservation.html
 
 Firebase hosting files: 
 ├── .firebaserc...

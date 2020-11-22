@@ -77,10 +77,7 @@
 </head>
 
 <body>
-    <!------------------------------------------------------------>
-    <!------ Header consists of the notification icon, the metrOne
-        logo and the menu button--------------------------------->
-    <!------------------------------------------------------------>
+    <!--Header: consists of the notification icon, the metrOne logo and the menu button-->
     <header>
         <img src="./images/bell.png" class="icon" id="bell">
         <a href="main.html"><img src="./images/metrOneLogoText.png" class="logo icon"></a>
@@ -88,7 +85,7 @@
     </header>
 
 
-    <!---------------->
+    <!--------------->
     <!--Search Bar -->
     <!--------------->
     <input id="searchbar" type="text" placeholder="       search store here">
@@ -123,7 +120,7 @@
     </div>
 
     <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related -->
+    <!----- JS: Boostrap, Firebase, API related ----->
     <!----------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -158,54 +155,51 @@
     <script>
         var toSearch = localStorage.getItem("userSearchFor");
         toSearch = toSearch.toLowerCase();
-        console.log(toSearch);
-
-        // If to do is NOT null 
-        // meaning the user search store from searchbar
+        
+        // If to do is NOT null. meaning the user search store from searchbar
         if (toSearch !== "null") {
             // Empty out all the list in the DOM
             $("#storeList ul").empty();
 
-            // An array to store the id of stores that matches based
-            // user search
+            // An array to store the id of stores that matches based user search
             var listOfStoreID = [];
 
-            // Iterate through the store in the databse
-            // and compare each store's name value to user's input
+            /* Iterate through the store in the databse
+             and compare each store's name value to user's input. */
             db.collection("stores").get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
-                    //  Comparing store name with the user input
                     // if mathces at the store id into the array
                     if (doc.data().name.toLowerCase().includes(toSearch)) {
                         listOfStoreID.push(doc.id);
-
-                        var thisStore = $("<li></li>");
-                        $("#storeList ul").append(thisStore);
-
-                        var thisStoreLink = $("<a class='store' href='store.html'></a>");
-                        $(thisStore).append(thisStoreLink);
-                        $(thisStoreLink).attr('id', doc.id);
-                        $(thisStoreLink).append(doc.data().name);
+                        addStore(doc);
                     }
                 });
-                //console.log(listOfStoreID);
 
+                // If there is nothing in the list, there is no store found.
                 if (listOfStoreID.length === 0) {
                     $("#storeList").append("No Store Found");
                 }
             });
+
+        /* The user did not search from the search bar and all store should be shown
+            in the list.*/
         } else {
             db.collection("stores").get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
-                    var thisStore = $("<li></li>");
-                    $("#storeList ul").append(thisStore);
-
-                    var thisStoreLink = $("<a class='store' href='store.html'></a>");
-                    $(thisStore).append(thisStoreLink);
-                    $(thisStoreLink).attr('id', doc.id);
-                    $(thisStoreLink).append(doc.data().name);
+                    addStore(doc);
                 })
             });
+        }
+
+        /* Add a store to the store-list page. */
+        function addStore(doc) {
+            var thisStore = $("<li></li>");
+            $("#storeList ul").append(thisStore);
+
+            var thisStoreLink = $("<a class='store' href='store.html'></a>");
+            $(thisStore).append(thisStoreLink);
+            $(thisStoreLink).attr('id', doc.id);
+            $(thisStoreLink).append(doc.data().name);
         }
     </script>
 

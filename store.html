@@ -14,68 +14,15 @@
     <!--Stylesheets-->
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <style>
-        html {
-            font-size: 16pt;
-            background-color: white;
-        }
-
-        #searchbar {
-            margin: auto;
-            position: absolute;
-            top: 3.5rem;
-            left: 50%;
-            transform: translate(-50%);
-        }
-
-        input[type=text] {
-            border-radius: 15px;
-        }
-
-        .card {
-            position: absolute;
-            top: 8rem;
-            padding-bottom: 5rem;
-        }
-
-        .btn-primary {
-            margin-bottom: 0.3rem;
-        }
-
-        #store-status {
-            margin-bottom: 0.6rem;
-        }
-
-        #store-status>* {
-            display: inline;
-            font-size: 1.5rem;
-            top: 50%;
-        }
-
-        #icon-star {
-            margin-bottom: 0.5rem;
-        }
-
-        #btn-favourite {
-            float: right;
-        }
-
-        @media only screen and (min-width: 475px) {
-            #store-image {
-                margin: 0px auto;
-                width: 500px;
-            }
-
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/searchbar.css">
+    <link rel="stylesheet" href="./styles/store-page.css">
 
 </head>
 
 <body>
-    <!------------------------------------------------------------>
-    <!------ Header consists of the notification icon, the metrOne
-        logo and the menu button--------------------------------->
-    <!------------------------------------------------------------>
+    <!--------------------------------------------------------------------------------->
+    <!-- Header consists of the notification icon, the page title and the menu button-->
+    <!--------------------------------------------------------------------------------->
     <header>
         <img src="./images/bell.png" class="icon" id="bell">
         <a href="main.html"><img src="./images/metrOneLogoText.png" class="logo icon"></a>
@@ -183,8 +130,6 @@
         }
         readQuote();
     </script>
-
-
 </body>
 
 </html>

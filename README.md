@@ -77,9 +77,18 @@ It has the following subfolders and files:
     /write.js                # write a new store information to the datbase
 
 ├── styles                   # Folder for styles
+    /favorite.css            # Stylesheet for favorite store page
     /header.css              # Stylesheet for common navigation bar 
+    /landing.css             # Stylesheet for the landing page
     /navbar.css              # Stylesheet for common header
     /reservation.css         # Stylesheet for reservation.html
+    /searchbar.css           # Stylesheet for the common searchbar
+    /settings.css            # stylesheet for settings.css
+    /sign-up.css             # Stylesheet for the sign-up page
+    /store-list.css          # Stylesheet for store-list.html
+    /store-page.css          # Stylesheet for store.html
+
+    
 
 Firebase hosting files: 
 ├── .firebaserc...

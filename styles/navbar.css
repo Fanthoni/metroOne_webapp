@@ -47,8 +47,29 @@
 }
 
 @media only screen and (min-width: 500px) {
+
     /* Make navbar fix after this size */
-    #navbar{
+    #navbar {
         width: 380px;
     }
 }
+
+/*
+@media only screen and (min-width: 600px) {
+    #navbar {
+        display: grid;
+        width: 75px;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 6fr;
+        grid-template-areas:
+            "home"
+            "sale"
+            "favorite"
+            "reservation";
+        left: 0;
+        bottom: 50%;
+        transform: translate(0, 50%);
+    }
+}
+*/

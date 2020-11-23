@@ -1,0 +1,14 @@
+/* Common style for searchbar */
+/* All pages with searchbar must implement this CSS stylesheet. */
+
+#searchbar {
+    margin: auto;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+input[type=text] {
+    border-radius: 15px;
+}

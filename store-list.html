@@ -14,65 +14,8 @@
     <!--Stylesheets-->
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <style>
-        html {
-            font-size: 16pt;
-            background-color: white;
-        }
-
-        #searchbar {
-            margin: auto;
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translate(-50%);
-        }
-
-        input[type=text] {
-            border-radius: 15px;
-        }
-
-        #storeList {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 80%;
-            height: 60%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-
-            z-index: -1;
-
-        }
-
-        #storeList ul {
-            padding-bottom: 5rem;
-        }
-
-        #storeList li {
-            background-color: rgb(213, 232, 240);
-            border-radius: 25px;
-            list-style: none;
-
-            margin-bottom: 1rem;
-            left: 50%;
-            transform: translate(-57%, 0);
-            position: relative;
-
-            height: 10vh;
-            width: 60vw;
-        }
-
-        #storeList a {
-            color: black;
-            position: absolute;
-            margin: 0;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -60%);
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/searchbar.css">
+    <link rel="stylesheet" href="./styles/store-list.css">
 
 </head>
 
@@ -113,7 +56,7 @@
     <!------------------------------------------>
     <div id="navbar">
         <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
-        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
+        <div id="sale"><a href="settings.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
         <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
         <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
                     class="button"></a></div>

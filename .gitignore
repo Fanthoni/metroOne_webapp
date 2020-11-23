@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
 settings.json
+store-page.html
 
 # Log file
 *.log

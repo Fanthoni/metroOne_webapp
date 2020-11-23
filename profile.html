@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Store Page</title>
+    <title>My Profile</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -14,101 +14,19 @@
     <!--Stylesheets-->
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <style>
-        html {
-            font-size: 16pt;
-            background-color: white;
-        }
-
-        header p{
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%);
-            font-size: 2em;
-        }
-      
-      
-        input[type=text]{
-            border-radius:15px;
-        }
-
-        #profileWrap{
-            top: 0;
-            width: 100%;
-            height: 30vh;
-            background-color: rgb(213, 232, 240);
-            margin: 0;
-            border-radius: 15px;
-            z-index: -1;
-            text-align: center;
-            overflow: hidden;
-        }
-        
-        #profileWrap p {
-            font-weight: 600;
-            font-size: 1.25em;
-            padding: 0.5rem;
-        }
-        
-        #profilePic{
-            padding-top: 10vh;
-            justify-content: center;             
-            height: 10vh;           
-        }
-
-        #back{
-            width: 25px;
-            float: left;
-        }
-        
-        #profileLink{
-            position: absolute;
-            top: 35%;
-            left: 50%;
-            width: 60%;
-            height: 50%;
-            transform: translate(-50%);
-            text-align: center;
-            margin-top: 2vh;
-        }
-        
-        #profileLink li{
-            background-color: rgb(213, 232, 240);
-            list-style: none;
-            margin-bottom: 5vh;         
-            padding: 1vw;            
-            border-radius: 25px;
-            transform: translate(-10%);
-            font-size: 1rem;
-            padding: 0.5rem;
-        }
-
-        #profileLink a{
-            color: black;
-        }
-        
-        #edit-icon {
-            float: right;
-        }
-        
-        
-    </style>
-    
-
+    <link rel="stylesheet" href="./styles/profile.css">
 </head>
 
 <body>
     <!--------------------------------------------------------------------------------->
     <!-- Header consists of the notification icon, the page title and the menu button-->
     <!--------------------------------------------------------------------------------->
+    
     <header>
         <a href="settings.html"><img src="./images/back.png" class="icon" id="back"></a>
-        <p>Profile</p>
+        <p>My Profile</p>
         <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
-        
     </header>
-
-
 
     <!--Menu-->
     <div id="menu">
@@ -122,35 +40,38 @@
         </ul>
     </div>
 
-    <div id="profileWrap">
-        <img src="./images/profile.png" id="profilePic">
-        <div id="profileName"><p>John Smith</p></div>
-        <div id="profileEmail"><p>JohnSmith@gmail.com</p></div>
-    </div> 
     
+    <div id="profileWrap">
+        <div id="profileName">
+            <p>John Smith</p>
+        </div>
+        <div id="profileEmail">
+            <p>JohnSmith@gmail.com</p>
+        </div>
+    </div>
+
     <div id="profileLink">
         <ul>
             <li><a href="feedback.html">My Feedbacks</a></li>
             <li><a href="favorite.html">My Subscription</a></li>
-            <li><a href="reservation.html">My Reservation</a></li>       
+            <li><a href="reservation.html">My Reservation</a></li>
         </ul>
-    </div> 
+    </div>
+
 
     <!------------------------------------------>
     <!------------Navigation bar---------------->
     <!------------------------------------------>
     <div id="navbar">
-        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
+        <div id="sale"><a href="settings.html"><img src="./images/settings-current.png" alt="sale" class="button"></a>
+        </div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
                     class="button"></a></div>
-        <div id="sale"><a href="settings.html"><img src="./images/settings-current.png" alt="sale"
-                    class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
-                    class="button"></a></div>
-        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
-                    alt="res" class="button"></a></div>
     </div>
-    
-    
+
+
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related -->
     <!----------------------------------------------->
@@ -180,20 +101,7 @@
     <!--------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/menu.js"></script>
-    <script>
-        var userID = localStorage.getItem("thisUserID");
-        
-        function readQuote() {
-            db.collection("users").doc(userID)
-                .onSnapshot(function (snap) {
-                    $("#profileName").html("<p>" + snap.data().name + "</p>");
-                    $("#profileEmail").html("<p>" + snap.data().email + "</p>");
-                })
-        }
-        readQuote();
-    </script>
-
-    
+    <script src="./scripts/profile.js"></script>
 </body>
 
 </html>

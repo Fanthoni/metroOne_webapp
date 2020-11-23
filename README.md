@@ -71,6 +71,7 @@ It has the following subfolders and files:
     /firebase_api_metro1.js  # Firebase API for the app's database 
     /login.js                # user authentication script
     /menu.js                 # Javascript file for the menu's functionality and animation
+    /profile.js              # Javascript file for profile DOM manipulation
     /res.js                  # 
     /searchbar.js            # Store search functionality of the serachbar
     /store.js                # Listens to which store is being requested from the event
@@ -80,7 +81,8 @@ It has the following subfolders and files:
     /favorite.css            # Stylesheet for favorite store page
     /header.css              # Stylesheet for common navigation bar 
     /landing.css             # Stylesheet for the landing page
-    /navbar.css              # Stylesheet for common header
+    /navbar.css              # Stylesheet for common navigation bar
+    /profile.css             # Stylesheet for profile.html
     /reservation.css         # Stylesheet for reservation.html
     /searchbar.css           # Stylesheet for the common searchbar
     /settings.css            # stylesheet for settings.css

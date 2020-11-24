@@ -13,10 +13,9 @@ $(document).ready(function () {
   });
 
   // From the store list
-  $('li a[class="store"]').click(function (event) {
+  $("ul").on("click", ".store", function (event){
     callerID = event.target.id;
     console.log(callerID);
-    alert(callerID);
     localStorage.setItem("storeID", callerID);
   });
   

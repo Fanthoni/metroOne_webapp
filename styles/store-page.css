@@ -1,0 +1,41 @@
+/* ONLY store.html implements this stylesheet. */
+html {
+    font-size: 16pt;
+    background-color: white;
+}
+
+.card {
+    position: absolute;
+    top: 8rem;
+    padding-bottom: 5rem;
+}
+
+.btn-primary {
+    margin-bottom: 0.3rem;
+}
+
+#store-status {
+    margin-bottom: 0.6rem;
+}
+
+#store-status>* {
+    display: inline;
+    font-size: 1.5rem;
+    top: 50%;
+}
+
+#icon-star {
+    margin-bottom: 0.5rem;
+}
+
+#btn-favourite {
+    float: right;
+}
+
+@media only screen and (min-width: 475px) {
+    #store-image {
+        margin: 0px auto;
+        width: 500px;
+    }
+
+}

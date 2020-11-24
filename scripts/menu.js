@@ -25,9 +25,9 @@ $(document).ready(function () {
     });
 
     /*
-    When the user clicks on the store list, set the local storage
-    "userSearchFor" to null. If the userSearchFor equals to null, 
-    then we want to show every store in the database.
+    When the user clicks on the store list option, set the local storage
+    "userSearchFor" to null. If the userSearchFor equals to null, it means 
+    we want to show every store in the database.
     */
     var storeListMenu = document.getElementById("toDefaultStoreList");
     storeListMenu.addEventListener("click", function(e){

@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Store Page</title>
+    <title>Your Favorite Stores</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -11,24 +10,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!--Stylesheets-->
-    <link rel="stylesheet" href="styles/header.css">
+    <!-- Firebase CSS for Authentication UI -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="./styles/searchbar.css">
-    <link rel="stylesheet" href="./styles/store-page.css">
+    <link rel="stylesheet" href="styles/searchbar.css">
+    <link rel="stylesheet" href="./styles/favorite.css">
 
 </head>
 
 <body>
-    <!--------------------------------------------------------------------------------->
-    <!-- Header consists of the notification icon, the page title and the menu button-->
-    <!--------------------------------------------------------------------------------->
+    <!------------------------------------------------------------>
+    <!------ Header consists of the notification icon, the metrOne
+        logo and the menu button--------------------------------->
+    <!------------------------------------------------------------>
     <header>
         <img src="./images/bell.png" class="icon" id="bell">
         <a href="main.html"><img src="./images/metrOneLogoText.png" class="logo icon"></a>
         <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
     </header>
-
 
     <!---------------->
     <!--Search Bar -->
@@ -47,47 +49,22 @@
         </ul>
     </div>
 
-    <!--The shop main info and actions-->
-    <div class="card">
-        <img class="card-img-top" id="store-image" src="https://dummyimage.com/600x400/000/fff" alt="Card image cap">
-        <div class="card-body">
-            <div id="store-status">
-                <p id="average-rate">0.0</p>
-                <img id="icon-star" src="./images/star.png">
-                <img class="btn" id="btn-favourite" src="./images/heart.png">
-            </div>
-            <h4 class="card-title" id="store-name">Store name goes here</h4>
-            <p class="card-text" id="store-desc">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
-            </p>
-            <a href="./store-reservation.html" class="btn btn-primary" id="btn-reserve">RESERVE</a>
-            <br />
-            <a href="store-community.html" class="btn btn-primary" id="btn-community">COMMUNITY</a>
-        </div>
-    </div>
-
     <!------------------------------------------>
     <!------------Navigation bar---------------->
     <!------------------------------------------>
     <div id="navbar">
         <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
-        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
+        <div id="sale"><a href="settings.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/fav-current.png" alt="fav" class="button"></a>
+        </div>
         <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
                     class="button"></a></div>
     </div>
 
-    <!-------------------------------------------->
-    <!-- The following is JS for functionality  -->
-    <!-------------------------------------------->
-    <!-- Bootstrap libraries from CDN -->
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related -->
+    <!----------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -105,31 +82,16 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-    <!--Firebase API-->
+    <!--MetrOne API-->
     <script src="./scripts/firebase_api_metro1.js"></script>
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    --------->
     <!--------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/store.js"></script>
     <script src="scripts/menu.js"></script>
+    <script src="scripts/store.js"></script>
     <script src="./scripts/searchbar.js"></script>
-
-    <script>
-        callerID = localStorage.getItem("storeID");
-        console.log(callerID);
-        alert(callerID);
-
-        function readQuote() {
-            db.collection("stores").doc(callerID)
-                .onSnapshot(function (snap) {
-                    document.getElementById("store-name").innerText = snap.data().name;
-                    document.getElementById("store-desc").innerText = snap.data().description;
-                })
-        }
-        readQuote();
-    </script>
 </body>
 
 </html>

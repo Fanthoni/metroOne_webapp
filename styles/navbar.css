@@ -1,54 +1,54 @@
 /* Stylesheet for the common navigation bar.*/
 
-#navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: rgb(213, 232, 240);
-    width: 85%;
-    height: 70px;
-    margin: auto;
-    grid-template-areas:
-        "home sale favorite reservation";
-    border-radius: 15px;
+.navbar {
     position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
+    overflow: hidden;
+    bottom: 0;    
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
 }
 
-#home {
-    grid-area: home;
-    justify-self: center;
-    align-self: center;
+.navbar ul {
+    list-style-type: none;  
+    display: flex;    
+    justify-content: space-between;
+    width: 100%;    
+    margin: 0 10%;
+    padding: 0;
 }
 
-#sale {
-    grid-area: sale;
-    justify-self: center;
-    align-self: center;
+.navbar li {
+    display: inline-block;      
 }
 
-#favorite {
-    grid-area: favorite;
-    justify-self: center;
-    align-self: center;
-}
-
-#reservation {
-    grid-area: reservation;
-    justify-self: center;
-    align-self: center;
-}
-
-.button {
-    padding: 0.5rem;
-    border-radius: 10px;
-    background: rgb(213, 232, 240);
+.navbar li a {
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 500px) {
+
     /* Make navbar fix after this size */
-    #navbar{
+    #navbar {
         width: 380px;
     }
 }
+
+/*
+@media only screen and (min-width: 600px) {
+    #navbar {
+        display: grid;
+        width: 75px;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 6fr;
+        grid-template-areas:
+            "home"
+            "sale"
+            "favorite"
+            "reservation";
+        left: 0;
+        bottom: 50%;
+        transform: translate(0, 50%);
+    }
+}
+*/

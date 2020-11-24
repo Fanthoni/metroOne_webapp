@@ -20,42 +20,36 @@
             background-color: white;
         }
 
-        header p{
+        header p {
             position: absolute;
             left: 50%;
             transform: translate(-50%);
             font-size: 2em;
         }
-        
+
         .logo {
             width: 50px;
             transform: translate(-350%, 10%);
         }
-      
-      
-        input[type=text]{
-            border-radius:15px;
+
+
+        input[type=text] {
+            border-radius: 15px;
         }
-
-
-
-        
     </style>
-    
+
 
 </head>
 
 <body>
-    <!------------------------------------------------------------>
-    <!------ Header consists of the notification icon, the metrOne
-        logo and the menu button--------------------------------->
-    <!------------------------------------------------------------>
+    <!--------------------------------------------------------------------------------->
+    <!-- Header consists of the notification icon, the page title and the menu button-->
+    <!--------------------------------------------------------------------------------->
     <header>
         <img src="./images/bell.png" class="icon" id="bell">
-        <a href="main.html"><img src="./images/metrOneLogo.png" class="logo icon"></a>
         <p>Notifications</p>
         <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
-        
+
     </header>
 
 
@@ -65,50 +59,55 @@
         <ul>
             <li><a href="store-reservation.html">STORE RESERVATION</a></li>
             <li><a href="safety.html">SAFETY PROTOCOLS</a></li>
-            <li><a href="store-list.html">STORE LIST</a></li>
+            <li><a id="toDefaultStoreList" href="store-list.html">STORE LIST</a></li>
             <li><a href="settings.html">SETTINGS</a></li>
             <li><a href="about-us.html">ABOUT US</a></li>
             <li><a href="contact-us.html">CONTACT US</a></li>
         </ul>
     </div>
 
-
-    
-    
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related -->
-    <!----------------------------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    <script src="./scripts/firebase_api_metro1.js"></script>
-
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    --------->
-    <!--------------------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/menu.js"></script>
-
     <!------------------------------------------>
     <!------------Navigation bar---------------->
     <!------------------------------------------>
     <div id="navbar">
-        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home"
+        <div id="home"><a href="main.html"><img src="./images/home.png" alt="home" class="button"></a></div>
+        <div id="sale"><a href="settings.html"><img src="./images/settings-current.png" alt="sale" class="button"></a></div>
+        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
+        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
                     class="button"></a></div>
-        <div id="sale"><a href="sale.html"><img src="./images/settings.png" alt="sale"
-                    class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav"
-                    class="button"></a></div>
-        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png"
-                    alt="res" class="button"></a></div>
     </div>
 </body>
+
+
+<!----------------------------------------------->
+<!-- JS: Boostrap, Firebase, API related -->
+<!----------------------------------------------->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
+<!-- Firebase libraries from CDN -->
+<!--For all firebase in general-->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+<!--Firebase API-->
+<script src="./scripts/firebase_api_metro1.js"></script>
+
+<!--------------------------------------------------------------------->
+<!-- JS files: Your own JavaScript functions included here    --------->
+<!--------------------------------------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="scripts/menu.js"></script>
+
+
 
 </html>

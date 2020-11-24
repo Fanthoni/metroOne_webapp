@@ -68,6 +68,8 @@ It has the following subfolders and files:
     
 
 ├── scripts                  # Folder for scripts
+    /favourite-read.js       # Backend of favorite.html
+    /favourite-write.js      # Backend of pressing the like button to a store.
     /firebase_api_metro1.js  # Firebase API for the app's database 
     /login.js                # user authentication script
     /menu.js                 # Javascript file for the menu's functionality and animation

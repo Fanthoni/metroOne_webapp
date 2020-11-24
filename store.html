@@ -115,17 +115,19 @@
     <script src="scripts/store.js"></script>
     <script src="scripts/menu.js"></script>
     <script src="./scripts/searchbar.js"></script>
+    <script src="./scripts/favourite-write.js"></script>
 
+    <!--DOM manipulation when the page loads up-->
     <script>
         callerID = localStorage.getItem("storeID");
-        console.log(callerID);
-        alert(callerID);
+        //alert(callerID);
 
         function readQuote() {
             db.collection("stores").doc(callerID)
                 .onSnapshot(function (snap) {
                     document.getElementById("store-name").innerText = snap.data().name;
                     document.getElementById("store-desc").innerText = snap.data().description;
+                    document.getElementById("average-rate").innerText = snap.data().rating_average;
                 })
         }
         readQuote();

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     /* Variables for menu controlling*/
     var isX = false;
-    var menuSlideIn = {"left": "-0%", "easing": "swing"};
+    var menuSlideIn = {"left": "0%", "easing": "swing"};
     var menuSlideOut = {"left": "-85%", "easing": "swing"};
 
     /*

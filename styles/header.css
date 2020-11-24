@@ -4,11 +4,11 @@ list of menus when the menu icon is clicked. */
 
 header {
     position: fixed;
+    top: 0;
     width: 100%;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
     border-radius: 0 0 10px 10px;
-
     z-index: +100;
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -32,7 +32,6 @@ header {
 
 .logo {
     width: 200px;
-
     position: absolute;
     margin: 0;
     left: 50%;
@@ -47,7 +46,6 @@ header {
     left: -85%;
     transform: translate(0, -50%);
     z-index: +200;
-
     background-color: grey;
     display: inline;
     height: 100%;
@@ -60,7 +58,7 @@ header {
     text-align: left;
     margin-top: 1rem;
     color: white;
-
+    margin-left: 2rem;
 }
 
 li a {

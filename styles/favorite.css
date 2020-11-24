@@ -1,5 +1,44 @@
 /* Only favorite.html implements this stylesheet. */
-html {
+html{
     font-size: 16pt;
-    background-color: white;
+}
+#favorite-list {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    z-index: -1;
+
+}
+
+#favorite-list ul {
+    padding-bottom: 5rem;
+}
+
+#favorite-list li {
+    background-color: rgb(213, 232, 240);
+    border-radius: 25px;
+    list-style: none;
+
+    margin-bottom: 1rem;
+    left: 50%;
+    transform: translate(-57%, 0);
+    position: relative;
+
+    height: 10vh;
+    width: 60vw;
+}
+
+#favorite-list a {
+    color: black;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -60%);
 }

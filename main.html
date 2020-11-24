@@ -16,35 +16,15 @@
 
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/searchbar.css">
-    <style>
-        html {
-            font-size: 16pt;
-            background-color: white;
-        }
-
-        #directory img {
-            width: 300px;
-            height: 300px;
-
-            position: absolute;
-            margin: 0;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -45%);
-        }
-
-        @media only screen and (min-width: 475px) {
-            #directory img {
-                width: 300px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/main.css">
+    
 </head>
 
 <body>
+
+    <img id="bg" src="./images/mainBackGround.jpg">
 
     <!------------------------------------------------------------>
     <!------ Header consists of the notification icon, the metrOne
@@ -84,12 +64,13 @@
     <!------------------------------------------>
     <!------------Navigation bar---------------->
     <!------------------------------------------>
-    <div id="navbar">
-        <div id="home"><a href="main.html"><img src="./images/home-current.png" alt="home" class="button"></a></div>
-        <div id="sale"><a href="settings.html"><img src="./images/settings.png" alt="sale" class="button"></a></div>
-        <div id="favorite"><a href="favorite.html"><img src="./images/heart.png" alt="fav" class="button"></a></div>
-        <div id="reservation"><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"
-                    class="button"></a></div>
+    <div class="navbar">
+        <ul>
+            <li><a href="main.html"><img src="./images/home-current.png" alt="home"></a></li>
+            <li><a href="settings.html"><img src="./images/settings.png" alt="sale"></a></li>
+            <li><a href="favorite.html"><img src="./images/heart.png" alt="fav"></a></li>
+            <li><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"></a></li>
+        </ul>
     </div>
 
     <!-------->

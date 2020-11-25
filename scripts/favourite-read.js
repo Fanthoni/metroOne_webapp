@@ -8,6 +8,10 @@ $(document).ready(function () {
 
 
     function printThis(thisUserFavStore) {
+        if (thisUserFavStore.length === 0) {
+            $("#favorite-list").append("You have not liked any store");
+        }
+
         db.collection("stores").get().then(function (querySnapShot) {
             querySnapShot.forEach(function (doc) {
                 if (thisUserFavStore.includes(doc.id)) {

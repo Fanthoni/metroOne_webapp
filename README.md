@@ -28,7 +28,7 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── landing.html             # landing HTML file, this is what users see when you come to url
+├── index.html               # index HTML file, this is what users see when you come to url
 ├── profile.html             # HTML file, this is what users see when they click profile/settings
 ├── main.html                # the first HTML file that users see when they logged in to MetrOne
 ├── safety.html              # HTML file where users can see different safety protocols of the mall

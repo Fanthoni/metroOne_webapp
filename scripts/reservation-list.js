@@ -27,8 +27,19 @@ function renderList(doc){
     });
 };
 
-db.collection('reservations').get().then((snapshot) => {    
+db.collection('reservations').get().then((snapshot) => { 
+    let hasRes = false;   
     snapshot.docs.forEach(doc => {
-        renderList(doc);
+        if (doc.data().UID == localStorage.getItem("thisUserID")){
+            renderList(doc);
+            hasRes = true;
+        }
     });
+
+    if (!hasRes){
+        // Give message that this user dont have any reservation yet
+        let mes = document.createElement('p');
+        mes.textContent = 'You have no reservation.';
+        docList.appendChild(mes);
+    }
 });

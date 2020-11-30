@@ -21,3 +21,4 @@ var firebaseConfig = {
   // Create the Firestore database object
   // Henceforce, any reference to the database can be made with "db"
   const db = firebase.firestore();
+  db.settings({timestampsInSnapshots: true});

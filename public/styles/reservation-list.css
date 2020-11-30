@@ -1,0 +1,68 @@
+html {
+    font-size: 16pt;
+    background-color: white;
+}
+
+header p {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.1em;
+}
+
+#doc-list {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50vw;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+}
+
+#doc-list li {
+    background-color: rgb(213, 232, 240);
+    list-style: none;
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    height: 20vw;    
+    color: #555;
+    position: relative;
+    
+   
+}
+
+
+
+#back {
+    width: 25px;
+    float: left;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+
+li span{
+    display: block;
+}
+
+
+li div{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.6);
+    width: 10%;
+    height: width;
+    text-align: center;    
+    font-weight:  bold;
+    cursor:  pointer;
+    border-radius: 50%;
+}

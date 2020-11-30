@@ -1,0 +1,96 @@
+/* Stylesheet for common header. */
+/* Header includes notification bell, logo, and menu icon, and the 
+list of menus when the menu icon is clicked. */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-radius: 0 0 10px 10px;
+    z-index: +100;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.icon {
+    margin: 0.5rem;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+#bell {
+    float: left;
+}
+
+#back-btn{
+    width: 26px;
+    float: left;
+    margin: 0.5rem;
+}
+
+#menu-icon {
+    float: right;
+    z-index: +1;
+}
+
+.logo {
+    width: 200px;
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 0.5rem;
+    transform: translate(-53%);
+}
+
+#menu {
+    position: fixed;
+    margin: 0;
+    top: 50%;
+    left: -85%;
+    transform: translate(0, -50%);
+    z-index: +200;
+    background-color: grey;
+    display: inline;
+    height: 100%;
+    width: 85%;
+    padding-top: 2rem;
+}
+
+#menu li {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 1rem;
+    color: white;
+    margin-left: 2rem;
+}
+
+li a {
+    color: white;
+}
+
+li a:hover {
+    color: white;
+    animation-name: menuHover;
+    animation-duration: 1s;
+}
+
+@keyframes menuHover {
+    from {
+        font-size: 16pt;
+    }
+
+    to {
+        font-size: 18pt;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+
+    /*Very small device*/
+    .logo {
+        width: 170px;
+    }
+}

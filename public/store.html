@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Store Page</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/searchbar.css">
+    <link rel="stylesheet" href="./styles/store-page.css">
+
+</head>
+
+<body>
+    <!--------------------------------------------------------------------------------->
+    <!-- Header consists of the notification icon, the page title and the menu button-->
+    <!--------------------------------------------------------------------------------->
+    <header>
+        <img src="./images/bell.png" class="icon" id="bell">
+        <a href="main.html"><img src="./images/metrOneLogoText.png" class="logo icon"></a>
+        <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
+    </header>
+
+
+    <!---------------->
+    <!--Search Bar -->
+    <!--------------->
+    <input id="searchbar" type="text" placeholder="search store here">
+
+    <!--Menu-->
+    <div id="menu">
+        <ul>
+            <li><a href="reservation-list.html">STORE RESERVATION</a></li>
+            <li><a href="safety.html">SAFETY PROTOCOLS</a></li>
+            <li><a id="toDefaultStoreList" href="store-list.html">STORE LIST</a></li>
+            <li><a href="settings.html">SETTINGS</a></li>
+            <li><a href="about-us.html">ABOUT US</a></li>
+            <li><a href="contact-us.html">CONTACT US</a></li>
+        </ul>
+    </div>
+
+    <!--The shop main info and actions-->
+    <div class="card">
+        <img class="card-img-top" id="store-image" src="https://dummyimage.com/600x400/000/fff" alt="Card image cap">
+        <div class="card-body">
+            <div id="store-status">
+                <p id="average-rate">0.0</p>
+                <img id="icon-star" src="./images/star.png">
+                <img class="btn" id="btn-favourite" src="./images/heart.png">
+            </div>
+            <h4 class="card-title" id="store-name">Store name goes here</h4>
+            <p class="card-text" id="store-desc">
+                Some quick example text to build on the card title
+                and make up the bulk of the card's content.
+                Some quick example text to build on the card title
+                and make up the bulk of the card's content.
+                Some quick example text to build on the card title
+                and make up the bulk of the card's content.
+                Some quick example text to build on the card title
+                and make up the bulk of the card's content.
+            </p>
+            <a href="./store-reservation.html" class="btn btn-primary" id="btn-reserve">RESERVE</a>
+            <br />
+            <a href="store-community.html" class="btn btn-primary" id="btn-community">COMMUNITY</a>
+        </div>
+    </div>
+
+    <!------------------------------------------>
+    <!------------Navigation bar---------------->
+    <!------------------------------------------>
+    <div class="navbar">
+        <ul>
+            <li><a href="main.html"><img src="./images/home.png" alt="home"></a></li>
+            <li><a href="settings.html"><img src="./images/settings.png" alt="sale"></a></li>
+            <li><a href="favorite.html"><img src="./images/heart.png" alt="fav"></a></li>
+            <li><a href="reservation-list.html"><img src="./images/reservation.png" alt="res"></a></li>
+        </ul>
+    </div>
+    <!-------------------------------------------->
+    <!-- The following is JS for functionality  -->
+    <!-------------------------------------------->
+    <!-- Bootstrap libraries from CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!-- Firebase libraries from CDN -->
+    <!--For all firebase in general-->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+    <!--Firebase API-->
+    <script src="./scripts/firebase_api_metro1.js"></script>
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    --------->
+    <!--------------------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/store.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="./scripts/searchbar.js"></script>
+    <script src="./scripts/favourite-write.js"></script>
+
+    <!--DOM manipulation when the page loads up-->
+    <script>
+        callerID = localStorage.getItem("storeID");
+        //alert(callerID);
+
+        // Modify the store content
+        function readQuote() {
+            db.collection("stores").doc(callerID)
+                .onSnapshot(function (snap) {
+                    document.getElementById("store-name").innerText = snap.data().name;
+                    document.getElementById("store-desc").innerText = snap.data().description;
+                    document.getElementById("average-rate").innerText = snap.data().rating_average;
+                    document.getElementById("store-image").src = snap.data().image;
+                })
+        }
+
+        // Modify the bell to back icon if the user previously clicked on store list or favorite list
+        function modifyBellIcon() {
+            let data = JSON.parse(localStorage.getItem("backButton"));
+            if (data['toAppear'] == 'true') {
+                $('#bell').remove();
+                let backButton = $("<div ></div>");
+                $('header').prepend(backButton);
+
+                let toDirect = data['toDirect'];
+                let backButtonAnchor = $("<a></a>").attr('href', toDirect);
+                $(backButton).append(backButtonAnchor);
+
+                $(backButtonAnchor).append("<img id='back-btn' src='./images/back.png'>");
+            }
+        }
+
+        readQuote();
+        modifyBellIcon();
+    </script>
+</body>
+
+</html>

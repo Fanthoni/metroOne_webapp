@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Reservation</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Firebase CSS for Authentication UI -->
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/navbar.css">
+  <link rel="stylesheet" href="./styles/reservation.css">
+
+
+</head>
+
+<body>
+  <!--------------------------------------------------------------------------------->
+  <!-- Header consists of the notification icon, the page title and the menu button-->
+  <!--------------------------------------------------------------------------------->
+  <header>
+    <a href="main.html"><img src="./images/metrOneLogoText.png" class="logo icon"></a>
+  </header>
+
+  <!--Reservation-->
+  <div id="wrapper">
+    <div class="form-container">
+      <span class="form-heading">Reserve</span>
+      <form class="form">
+        <div class="input-field">
+          <input type="text" id="name" placeholder="Name">
+          <span class="bar"></span>
+        </div>
+        <div class="input-field">
+          <input type="time" id="time" placeholder="Time">
+          <span class="bar"></span>
+        </div>
+
+        <div class="input-field">
+          <input type="number" id="grp" placeholder="Number of Guests">
+          <span class="bar"></span>
+        </div>
+        <div class="input-field">
+          <button id="button">Reserve!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--Menu-->
+  <div id="menu">
+    <ul>
+      <li><a href="reservation-list.html">STORE RESERVATION</a></li>
+      <li><a href="safety.html">SAFETY PROTOCOLS</a></li>
+      <li><a id="toDefaultStoreList" href="store-list.html">STORE LIST</a></li>
+      <li><a href="settings.html">SETTINGS</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+      <li><a href="contact-us.html">CONTACT US</a></li>
+    </ul>
+  </div>
+
+  <!------------------------------------------>
+  <!------------Navigation bar---------------->
+  <!------------------------------------------>
+  <div class="navbar">
+    <ul>
+        <li><a href="main.html"><img src="./images/home.png" alt="home"></a></li>
+        <li><a href="settings.html"><img src="./images/settings.png" alt="sale"></a></li>
+        <li><a href="favorite.html"><img src="./images/heart.png" alt="fav"></a></li>
+        <li><a href="reservation-list.html"><img src="./images/reserve-current.png" alt="res"></a></li>
+    </ul>
+  </div>
+
+  <!-- Firebase libraries from CDN -->
+  <!--For all firebase in general-->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!--Firebase API-->
+  <script src="./scripts/firebase_api_metro1.js"></script>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    --------->
+  <!--------------------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./scripts/reservation.js"></script>
+  <script src="./scripts/menu.js"></script>
+
+</body>
+
+</html

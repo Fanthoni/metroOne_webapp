@@ -28,7 +28,7 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── landing.html             # landing HTML file, this is what users see when you come to url
+├── index.html               # landing HTML file, this is what users see when you come to url
 ├── profile.html             # HTML file, this is what users see when they click profile/settings
 ├── main.html                # the first HTML file that users see when they logged in to MetrOne
 ├── safety.html              # HTML file where users can see different safety protocols of the mall
@@ -68,13 +68,17 @@ It has the following subfolders and files:
     
 
 ├── scripts                  # Folder for scripts
+    /favourite-read.js       # Backend of favorite.html
+    /favourite-write.js      # Backend of pressing the like button to a store.
     /firebase_api_metro1.js  # Firebase API for the app's database 
     /login.js                # user authentication script
+    /main.js                 # Set the current logged in UID to local storage
     /menu.js                 # Javascript file for the menu's functionality and animation
     /profile.js              # Javascript file for profile DOM manipulation
     /res.js                  # 
     /searchbar.js            # Store search functionality of the serachbar
-    /store.js                # Listens to which store is being requested from the event
+    /store-list-dom.js       # DOM manipulation file for store-list
+    /store.js                # Listens to which store is being requested and from which event
     /write.js                # write a new store information to the datbase
 
 ├── styles                   # Folder for styles

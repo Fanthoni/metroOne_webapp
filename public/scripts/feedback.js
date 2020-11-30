@@ -32,31 +32,37 @@ function storeReview() {
         .catch(function (error) {
             console.error("Error", error);
         })
+
+        db.collection("users")
+
 }
 
 function getStoreReview(doc) {
     let li = document.createElement('li');
+    let userid = document.createElement('span');
     let reviewDate = document.createElement('span');
-    let userFeedback = document.getElementsByClassName('span');
+    let userFeedback = document.createElement('span');
 
     li.setAttribute('data-id', doc.id);
+    userid.textContent = doc.data().userid;
     reviewDate.textContent = doc.data().reviewDate;
     userFeedback.textContent = doc.data().userFeedback;
 
-    li.appendChild(userName);
+    li.appendChild(userid);
     li.appendChild(reviewDate);
     li.appendChild(userFeedback);
 
     reviewContent.appendChild(li);
+
 }
 
-db.collection('review').get().then(function (snapshot) {
+db.collection('review').get().then(snapshot => {
     
-    snapshot.forEach(function (doc) {
-        addReview(doc);
-        if (doc.data().storeid == localStorage.getItem("storeID")) {
-            addReview(doc);
-        } 
+    snapshot.forEach(doc => {
+        getStoreReview(doc);
+        // if (doc.data().storeid == localStorage.getItem("storeID")) {
+        //     getStoreReview(doc);
+        // } 
     })
 
 });

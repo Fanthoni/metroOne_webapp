@@ -17,7 +17,9 @@
 
 .reviews{
     margin: 2rem auto;
-    display: flex;
+    display: grid;
+    padding-bottom: 10em;
+    
 }
 
 .thankmsg{
@@ -80,6 +82,11 @@
     margin-right: auto;
     display: block;
 }
+
+#store-name{
+    text-align: center;
+}
+
 #submit {
     background: #66b3ff;
     border: none;

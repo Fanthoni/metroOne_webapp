@@ -12,37 +12,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!--Stylesheets-->
+    <link rel="stylesheet" href="styles/feedback.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <style>
-        html {
-            font-size: 16pt;
-            background-color: white;
-        }
 
-        #review-btn {
-            width: 250px;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, 0);
-            bottom: 80px;
-            border-radius: 20px;
-        }
 
-        #store-logo {
-            height: 50px;
-            width: auto;
-            margin-top: 0.5rem;
-            display: inline;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-
-        #content {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -56,20 +29,50 @@
     </div>
 
     <!--People's comment/review-->
-    <div id="content">
-        <div class="media">
-            <img class="d-flex mr-3" data-src="holder.js/64x64?theme=sky">
-            <div class="media-body">
-                <h5 class="mt-0 user-name">The user name goes here</h5>
-                <p>User comments goes here</p>
+    <div class="rev-section">
+        <h2 class="title">Store Feedback</h2>
+        <div class="review-button">
+            <div class="btn btn-outline-dark" id="review-btn" data-toggle="modal" data-target="#exampleModal"><i
+                    class="fas fa-pencil-alt"></i> WRITE A
+                REVIEW</a></div>
+        </div>
+        <div class="reviews">
                 
-            </div>
         </div>
     </div>
 
     <!--Write a review button-->
-    <a href="feedback.html" class="btn btn-outline-dark" id="review-btn"><img src="./images/writing.png" /> WRITE A
-        REVIEW</a>
+
+
+    <!-- Star Rating Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Comment us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="thankmsg">Thank you!</div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Review:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submit" onclick="storeReview()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!------------------------------------------>
@@ -96,10 +99,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/f894a665cf.js" crossorigin="anonymous"></script>
 
     <!-- Firebase libraries from CDN -->
     <!--For all firebase in general-->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
@@ -110,6 +114,7 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    --------->
     <!--------------------------------------------------------------------->
+    <script src="scripts/feedback.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>

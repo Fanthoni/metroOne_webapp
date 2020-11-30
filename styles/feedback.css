@@ -1,0 +1,99 @@
+.img-1{
+    filter: grayscale(100%) 
+}
+.rev-section{
+    margin: auto;
+    padding: 0 1rem;
+    max-width: 1100px;
+}
+
+.title{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: rgb(50,50,50);
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+.reviews{
+    margin: 2rem auto;
+    display: flex;
+}
+
+.thankmsg{
+    display: none;
+}
+
+.review{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    margin: 0 1rem;
+    background-color:white;
+    padding: 2.5rem;
+    box-shadow: 1px 1px 8px 2px   #80c1ff;
+}
+
+.user-photo{
+    grid-column: 1;
+}
+.user-photo img{
+    border-radius: 50%;
+    box-shadow: 0 10px 25px(0,0,0,.25);
+}
+
+.name-review{
+    margin-left: 1rem;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.5rem;
+    color: rgb(50,50,50);
+}
+
+.desc-review{
+    margin-left: 1rem;
+    grid-row: 2;
+    grid-column: 2;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    color: rgb(150,150,150);
+}
+
+.review-button{
+    display: flex;
+    justify-content: center;
+}
+#review-btn {
+    width: 165px;
+    background:  #0080ff;
+    color: #cce0ff;
+    border: none;
+}
+
+#store-logo {
+    height: 50px;
+    width: auto;
+    margin-top: 0.5rem;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#submit {
+    background: #66b3ff;
+    border: none;
+}
+
+.modal-header{
+    border: #0059b3;
+}
+#content {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 678px) {
+    .review{
+        margin-top: 1.5rem;
+    }
+}

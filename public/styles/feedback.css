@@ -1,4 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
+#menu{
+    background-color: #A0B9C4;
+}
 header h1{
     display: inline; 
     position: absolute;
@@ -94,7 +100,7 @@ header h1{
 }
 
 .name-review{
-    margin-left: 1rem;
+    text-transform: capitalize;
     grid-column: 1;
     grid-row: 1;
     font-size: 1.5rem;
@@ -104,14 +110,14 @@ header h1{
 .desc-review{
     margin-left: 1rem;
     margin-bottom: 0.2rem;
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 1;
     line-height: 1.5rem;
     letter-spacing: 1px;
     color: rgb(150,150,150);
 }
-
 .review-date{
+    margin-left: 1rem;
     font-size: 10px;
     font-style: italic;
 }

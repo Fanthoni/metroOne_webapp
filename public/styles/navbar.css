@@ -1,5 +1,8 @@
 /* Stylesheet for the common navigation bar.*/
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
 .navbar {
     position: fixed;
     overflow: hidden;
@@ -8,7 +11,9 @@
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
-
+#menu{
+    background-color: #A0B9C4;
+}
 .navbar ul {
     list-style-type: none;  
     display: flex;    

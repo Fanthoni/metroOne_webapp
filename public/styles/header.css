@@ -1,7 +1,13 @@
 /* Stylesheet for common header. */
 /* Header includes notification bell, logo, and menu icon, and the 
 list of menus when the menu icon is clicked. */
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
+#menu{
+    background-color: #A0B9C4;
+}
 header {
     position: fixed;
     top: 0;

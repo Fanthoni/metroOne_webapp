@@ -1,9 +1,15 @@
 /* ONLY store.html implements this stylesheet. */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
 html {
     font-size: 16pt;
     background-color: white;
 }
-
+#menu{
+    background-color: #A0B9C4;
+}
 .card {
     position: absolute;
     top: 8rem;
@@ -12,6 +18,15 @@ html {
 
 .btn-primary {
     margin-bottom: 0.3rem;
+    border: none; 
+}
+
+#btn-reserve{
+    background-color:  #32B9CA;
+}
+
+#btn-community{
+    background-color:  #3399ff;
 }
 
 #store-status {

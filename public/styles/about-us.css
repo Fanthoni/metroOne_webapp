@@ -1,13 +1,25 @@
 /* ONLY about-us.html implements this stylsheet.*/
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
+#menu{
+    background-color: #A0B9C4;
+}
 html{
-    font-size: 16pt;
+    font-size: 18pt;
 }
 #content {
     position: absolute;
     top: 80px;
     width: 100vw;
 }
-
+p{
+    color: black;
+}
 #content p{
     font-size: 20px;
+}
+.display-5{
+    color: #006bb3;
 }

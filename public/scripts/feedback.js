@@ -101,7 +101,8 @@ function addReview(doc) {
     db.collection('users').doc(userid).get().then(function (doc) {
         let user = doc.data().name;
         $(userName).append(user);
-        $(review).append(userName);
+        $(reviewDate).prepend(userName);
+        $(review).append(reviewDate);
     })
 
     var explanation = doc.data().userFeedback;

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
 html {
     font-size: 16pt;
     background-color: white;
@@ -9,7 +13,9 @@ header p {
     transform: translate(-50%);
     font-size: 1.1em;
 }
-
+#menu{
+    background-color: #A0B9C4;
+}
 #doc-list {
     position: absolute;
     left: 50%;

@@ -1,4 +1,11 @@
 /* Only favorite.html implements this stylesheet. */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
+#menu{
+    background-color: #A0B9C4;
+}
 html{
     font-size: 16pt;
 }

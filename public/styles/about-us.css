@@ -1,0 +1,13 @@
+/* ONLY about-us.html implements this stylsheet.*/
+html{
+    font-size: 16pt;
+}
+#content {
+    position: absolute;
+    top: 80px;
+    width: 100vw;
+}
+
+#content p{
+    font-size: 20px;
+}

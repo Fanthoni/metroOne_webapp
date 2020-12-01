@@ -13,10 +13,9 @@ body{
     background-color: rgba(254, 254, 255, 0.1);    
 }
 
-#wrapper{
-    width: 90%;
-    height: 100vh;
-    margin: 0 auto;
+#wrapper{   
+    height: 80vh;
+    margin: 10vh auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,11 +48,10 @@ form{
     border-radius: 1rem;
 }
 
-.input-field{
-    
+.input-field{    
     width: 80%;
     margin: 1rem auto;  
-    border: 0.2rem solid black;
+    border: 0.3rem solid black;
     border-radius: 1rem;
 }
 

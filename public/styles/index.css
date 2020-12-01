@@ -1,7 +1,14 @@
 /* ONLY landing.html implements this stylesheet. */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
 .wrapper {
     margin-top: 10vh;
 
+}
+#menu{
+    background-color: #A0B9C4;
 }
 
 .spaceButton {

@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
+#menu{
+    background-color: #A0B9C4;
+}
+header h1{
+    display: inline; 
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+#content{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 90vw;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
 .img-1{
     filter: grayscale(100%) 
 }
@@ -17,7 +41,9 @@
 
 .reviews{
     margin: 2rem auto;
-    display: flex;
+    display: grid;
+    padding-bottom: 10em;
+    
 }
 
 .thankmsg{
@@ -25,14 +51,44 @@
 }
 
 .review{
+    margin-bottom: 3vh;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+
+    background-color:rgb(238, 238, 238);
+    padding: 1rem;
+    box-shadow: 1px 1px 8px 2px   #99C1D5;
+    border-width: 0.6px;
+    border-radius: 10px;
+    
+}
+
+.review li{
+    display: grid;
+    list-style: none;
     margin: 0 1rem;
-    background-color:white;
+    background-color:rgb(238, 238, 238);
     padding-top: 2rem;
-    padding: 2.5rem;
-    box-shadow: 1px 1px 8px 2px   #80c1ff;
+    padding: 2rem;
+    box-shadow: 1px 1px 8px 2px   #99C1D5;
+}
+
+.review li :nth-child(1){
+    font-style: bold;
+}
+.review li :nth-child(2){
+    font-size: 10px;
+    font-style: italic;
+}
+
+.review li :nth-child(3){
+    float: right;
+    color: rgb(150, 150, 150);
+}
+
+.review li :nth-child(4){
+    grid-column: 2;
 }
 
 .user-photo{
@@ -44,8 +100,8 @@
 }
 
 .name-review{
-    margin-left: 1rem;
-    grid-column: 2;
+    text-transform: capitalize;
+    grid-column: 1;
     grid-row: 1;
     font-size: 1.5rem;
     color: rgb(50,50,50);
@@ -53,11 +109,17 @@
 
 .desc-review{
     margin-left: 1rem;
-    grid-row: 2;
-    grid-column: 2;
+    margin-bottom: 0.2rem;
+    grid-row: 3;
+    grid-column: 1;
     line-height: 1.5rem;
     letter-spacing: 1px;
     color: rgb(150,150,150);
+}
+.review-date{
+    margin-left: 1rem;
+    font-size: 10px;
+    font-style: italic;
 }
 
 .review-button{
@@ -80,13 +142,32 @@
     margin-right: auto;
     display: block;
 }
+
+#store-name{
+    text-align: center;
+}
+
 #submit {
     background: #66b3ff;
     border: none;
 }
 
 .modal-header{
-    border: #0059b3;
+    background-color: #99C1D5;
+    border: none;
+}
+.col-form-label{
+    color: #93BDCF;
+}
+.modal-footer{
+    background-color:#99C1D5 ;
+}
+.btn-secondary{
+    background-color: #AAB9C0;
+    border: none;
+}
+#exampleModalLabel{
+    color: white;
 }
 #content {
     margin-top: 1rem;

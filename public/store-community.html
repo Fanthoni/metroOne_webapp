@@ -14,62 +14,72 @@
     <!--Stylesheets-->
     <link rel="stylesheet" href="styles/feedback.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="./styles/header.css">
 
 
 </head>
 
 <body>
-    <!--Store logo-->
-    <!--Logo will change depending on the store selected-->
-    <img alt="store-logo" id="store-logo" src="https://dummyimage.com/100x100/000/fff">
-    <!--Store rating-->
-    <div id="store-rate">
-
-    </div>
+    <!--Store Name-->
+    <header>
+        <a href="./store.html"><img id="back-btn" src="./images/back.png"></a>
+        <h1 id="store-name">Store Name</h1>
+        <img src="./images/hamburgerMenu.png" class="icon" id="menu-icon">
+    </header>
 
     <!--People's comment/review-->
-    <div class="rev-section">
-        <h2 class="title">Store Feedback</h2>
-        <div class="review-button">
-            <div class="btn btn-outline-dark" id="review-btn" data-toggle="modal" data-target="#exampleModal"><i
-                    class="fas fa-pencil-alt"></i> WRITE A
-                REVIEW</a></div>
-        </div>
-        <div class="review">
-                
-        </div>
-    </div>
+    <div id="content">
+        <div class="rev-section">
+            <div class="review-button">
+                <div class="btn btn-outline-dark" id="review-btn" data-toggle="modal" data-target="#exampleModal"><i
+                        class="fas fa-pencil-alt"></i> WRITE A
+                    REVIEW</a></div>
+            </div>
+            <div class="reviews">
 
-    <!--Write a review button-->
-
-
-    <!-- Star Rating Modal -->
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Comment us</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="thankmsg">Thank you!</div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Review:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="submit" onclick="storeReview()">Submit</button>
-                </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Star Rating Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Comment us</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="thankmsg">Thank you!</div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Review:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="submit"
+                    onclick="storeReview()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-------->
+    <!--Menu-->
+    <!-------->
+    <div id="menu">
+        <ul>
+            <li><a href="reservation-list.html">STORE RESERVATION</a></li>
+            <li><a id="toDefaultStoreList" href="store-list.html">STORE LIST</a></li>
+            <li><a href="settings.html">SETTINGS</a></li>
+            <li><a href="about-us.html">ABOUT US</a></li>
+        </ul>
     </div>
 
 
@@ -79,9 +89,15 @@
     <!------------------------------------------>
     <div class="navbar">
         <ul>
+<<<<<<< HEAD
             <li><a href="main.html"><img src="./images/home-current.png" alt="home"></a></li>
             <li><a href="reservation-list.html"><img src="./images/reservation.png" alt="res"></a></li>
             <li><a href="favorite.html"><img src="./images/heart.png" alt="fav"></a></li>
+=======
+            <li><a href="main.html"><img src="./images/home.png" alt="home"></a></li>
+            <li><a href="favorite.html"><img src="./images/heart.png" alt="fav"></a></li>
+            <li><a href="store-reservation.html"><img src="./images/reservation.png" alt="res"></a></li>
+>>>>>>> 48f07ca05427910124c31a33f92840796f71b0b1
             <li><a href="settings.html"><img src="./images/settings.png" alt="sale"></a></li>
         </ul>
     </div>
@@ -113,8 +129,9 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    --------->
     <!--------------------------------------------------------------------->
-    <script src="scripts/feedback.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/feedback.js"></script>
+    <script src="./scripts/menu.js"></script>
 
 </body>
 

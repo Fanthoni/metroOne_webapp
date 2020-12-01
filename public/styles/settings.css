@@ -1,4 +1,8 @@
 /* ONLY settings.html implements this stylesheet. */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
 html {
     font-size: 16pt;
     background-color: white;
@@ -10,14 +14,17 @@ header p {
     transform: translate(-50%);
     font-size: 2em;
 }
-
+#menu{
+    background-color: #A0B9C4;
+}
 #settingWrap {
     position: absolute;
     left: 50%;
     top: 50%;
+    margin-right: -50%;
     width: 60vw;
     height: 60%;
-    transform: translate(-50%, -50%);
+    transform: translate(-55%, -50%);
     text-align: center;
     margin: 0;
 }
@@ -38,4 +45,14 @@ header p {
 #back {
     width: 25px;
     float: left;
+}
+
+@media only screen and (max-width: 400px){
+    #settingWrap a{
+        font-size: 29px;
+    }
+
+    #settingWrap {
+        width: 80vw;
+    }
 }

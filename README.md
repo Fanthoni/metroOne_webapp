@@ -35,7 +35,6 @@ Content of the project folder:
 ├── store-list.html          # HTML file where users can browse stores through list
 ├── store-reservation.html   # HTML file where users see their list of store reservations
 ├── sign-up.html             # HTML files for users to sign up
-├── contact-us.html          # HTML file where users can contact the developers
 ├── about-us.html            # HTML file where users can read more about the developers and the app
 ├── settings.html            # HTML file where users configure their the app such as notifications, passwords, and profile
 └── README.md
@@ -55,8 +54,6 @@ It has the following subfolders and files:
     /home-current.png        # home icon when the user is AT the home screen
     /home.png                # home icon to go back to directory (home)
     /letter-x.png            # the letter 'x' icon to replace the menu icon when clicked and vice versa
-    /metro1logo.png          #
-    /metro1logo2.png         #
     /metrOneLogo.png         # logo for landing page
     /metrOneLogoText.png     # logo for everywhere else
     /reservation.png         # calendar icon for the reservation button at the navbar
@@ -75,13 +72,14 @@ It has the following subfolders and files:
     /main.js                 # Set the current logged in UID to local storage
     /menu.js                 # Javascript file for the menu's functionality and animation
     /profile.js              # Javascript file for profile DOM manipulation
-    /res.js                  # 
+    /reservation.js                  # 
     /searchbar.js            # Store search functionality of the serachbar
     /store-list-dom.js       # DOM manipulation file for store-list
     /store.js                # Listens to which store is being requested and from which event
     /write.js                # write a new store information to the datbase
 
 ├── styles                   # Folder for styles
+    /about-us.css            # Stylesheet for the about-us page.
     /favorite.css            # Stylesheet for favorite store page
     /header.css              # Stylesheet for common navigation bar 
     /landing.css             # Stylesheet for the landing page
@@ -97,7 +95,9 @@ It has the following subfolders and files:
     
 
 Firebase hosting files: 
-├── .firebaserc...
+├── .firebaserc
+    firebase.json
+    firestore.indexes.json
 
 
 ```

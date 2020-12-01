@@ -1,4 +1,8 @@
 /* ONLY profile.html implements this stylesheet. */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
 html {
     font-size: 16pt;
     background-color: white;
@@ -10,7 +14,9 @@ header p {
     transform: translate(-50%);
     font-size: 2em;
 }
-
+#menu{
+    background-color: #A0B9C4;
+}
 #profileWrap {
     top: 0;
     width: 100%;

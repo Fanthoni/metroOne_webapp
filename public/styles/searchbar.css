@@ -1,14 +1,21 @@
 /* Common style for searchbar */
 /* All pages with searchbar must implement this CSS stylesheet. */
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+*{
+    font-family: 'Jost', sans-serif;
+}
 #searchbar {
+    font-family: 'Jost', sans-serif;
     margin: auto;
     position: absolute;
     top: 10%;
     left: 50%;
     transform: translate(-50%);
+    z-index: +100;
 }
-
+#menu{
+    background-color: #A0B9C4;
+}
 input[type=text] {
-    border-radius: 15px;
+    border-radius: 10px;
 }

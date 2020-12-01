@@ -58,7 +58,8 @@ header p {
     list-style: none;
     margin-bottom: 5vh;
     padding: 1vw;
-    border-radius: 25px;    
+    border-radius: 25px;
+    transform: translate(-10%);
     font-size: 1rem;
     padding: 0.5rem;
 }

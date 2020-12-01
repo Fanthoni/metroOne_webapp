@@ -16,12 +16,6 @@ html{
 body{
     background-color: rgba(254, 254, 255, 0.1);    
 }
-<<<<<<< HEAD
-
-#wrapper{   
-    height: 80vh;
-    margin: 10vh auto;
-=======
 #menu{
     background-color: #A0B9C4;
 }
@@ -29,7 +23,6 @@ body{
     width: 90%;
     height: 100vh;
     margin: 0 auto;
->>>>>>> 48f07ca05427910124c31a33f92840796f71b0b1
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,19 +55,11 @@ form{
     border-radius: 1rem;
 }
 
-<<<<<<< HEAD
-.input-field{    
-    width: 80%;
-    margin: 1rem auto;  
-    border: 0.3rem solid black;
-    border-radius: 1rem;
-=======
 .input-field{
     width: 80%;
     margin: 1rem auto 1rem;  
     border: 0.2rem solid black;
     border-radius: 0.2rem;
->>>>>>> 48f07ca05427910124c31a33f92840796f71b0b1
 }
 
 .input-field input{

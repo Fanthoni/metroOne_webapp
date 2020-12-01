@@ -7,8 +7,9 @@
     top: 10%;
     left: 50%;
     transform: translate(-50%);
+    z-index: +100;
 }
 
 input[type=text] {
-    border-radius: 15px;
+    border-radius: 10px;
 }

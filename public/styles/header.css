@@ -26,6 +26,7 @@ header {
 }
 
 #back-btn{
+    position: absolute;
     width: 26px;
     float: left;
     margin: 0.5rem;

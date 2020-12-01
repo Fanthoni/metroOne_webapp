@@ -34,6 +34,9 @@ function storeReview() {
         .catch(function (error) {
             console.error("Error", error);
         })
+
+        db.collection("users")
+
 }
 
 function changeStoreTitle() {
@@ -48,18 +51,21 @@ changeStoreTitle();
 // Community DOM manipulation
 function getStoreReview(doc) {
     let li = document.createElement('li');
+    let userid = document.createElement('span');
     let reviewDate = document.createElement('span');
-    let userFeedback = document.getElementsByClassName('span');
+    let userFeedback = document.createElement('span');
 
     li.setAttribute('data-id', doc.id);
+    userid.textContent = doc.data().userid;
     reviewDate.textContent = doc.data().reviewDate;
     userFeedback.textContent = doc.data().userFeedback;
 
-    li.appendChild(userName);
+    li.appendChild(userid);
     li.appendChild(reviewDate);
     li.appendChild(userFeedback);
 
     reviewContent.appendChild(li);
+
 }
 
 // Check if there is any comments about this store
@@ -85,6 +91,9 @@ function addReview(doc) {
     var review = $("<div class='review'></div>");
     var userName = $("<div class='name-review'></div>");
     var explain = $("<div class='desc-review' id ='store-review'></div>");
+    let reviewDate = $("<div class='review-date'></div>");
+
+    
 
     let userid = doc.data().userid;
     $(".reviews").append(review);
@@ -98,4 +107,7 @@ function addReview(doc) {
     var explanation = doc.data().userFeedback;
     $(explain).append(explanation);
     $(review).append(explain);
+
+    $(reviewDate).append(doc.data().reviewDate);
+    $(review).prepend(reviewDate);
 }

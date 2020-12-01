@@ -50,11 +50,10 @@ form{
 }
 
 .input-field{
-    
     width: 80%;
-    margin: 1rem auto;  
+    margin: 1rem auto 1rem;  
     border: 0.2rem solid black;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
 }
 
 .input-field input{

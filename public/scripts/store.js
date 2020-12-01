@@ -7,7 +7,6 @@ $(document).ready(function () {
   $("area").click(function (event) {
     callerID = event.target.id;
     console.log(callerID);
-    alert(callerID);
     localStorage.setItem("storeID", callerID);
 
     localStorage.setItem("backButton", JSON.stringify({

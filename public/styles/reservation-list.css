@@ -2,6 +2,7 @@
 *{
     font-family: 'Jost', sans-serif;
 }
+
 html {
     font-size: 16pt;
     background-color: white;
@@ -11,11 +12,13 @@ header p {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
+
 #menu{
     background-color: #A0B9C4;
 }
+
 #doc-list {
     position: absolute;
     left: 50%;
@@ -23,52 +26,52 @@ header p {
     width: 50vw;
     height: 60%;
     transform: translate(-50%, -50%);
-    text-align: center;
     margin: 0;
 }
 
-#doc-list li {
-    background-color: rgb(213, 232, 240);
+#doc-list li { 
     list-style: none;
-    margin-bottom: 1rem;
-    padding: 0.7rem;
-    border-radius: 25px;
-    font-size: 1rem;
-    height: 20vw;    
-    color: #555;
+    margin: 1rem;
+    background-color:rgb(238, 238, 238);
+    padding: 2rem;
+    box-shadow: 1px 1px 8px 2px   #99C1D5;
     position: relative;
-    
-   
+    border-radius: 10px;
 }
 
+#doc-list li :nth-child(1){
+    font-weight: bold;
+}
+#doc-list li :nth-child(2){
+    font-size: 10px;
+    font-style: italic;
+}
 
+#doc-list li :nth-child(3){
+    float: left;
+    color: rgb(150, 150, 150);
+}
 
 #back {
     width: 25px;
     float: left;
 }
-ul{
+
+#doc-list ul{
     list-style-type: none;
-    padding: 0;
 }
 
-
-
-
-li span{
+#doc-list li span{
     display: block;
 }
 
-
-li div{
+#doc-list li button{
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(255,255,255,0.6);
-    width: 10%;
-    height: width;
+    background: rgba(255,255,255,0.6);    
     text-align: center;    
-    font-weight:  bold;
+    font-weight: bold;
     cursor:  pointer;
-    border-radius: 50%;
+    border-radius: 10px;
 }

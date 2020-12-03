@@ -2,18 +2,24 @@ const docList = document.querySelector('#doc-list');
 const resList = document.querySelector('#res-list');
 
 function renderList(doc){
-    let li = document.createElement('li');
-    let name = document.createElement('span');
+    let li = document.createElement('li');   
+    let name = document.createElement('span')
+    let date = document.createElement('span');
     let time = document.createElement('span');
-    let cross = document.createElement('div');
-
-    li.setAttribute('data-id', doc.id);
-    name.textContent = doc.data().name;
+    let cross = document.createElement('button');
+    
+    db.collection('users').doc(localStorage.getItem("thisUserID")).get().then(function (doc) {        
+        name.textContent = doc.data().name;    
+    })
+    
+    li.setAttribute('data-id', doc.id);   
+  
+    date.textContent = doc.data().date;
     time.textContent = doc.data().time;
     cross.textContent = 'x';
     
-    
-    li.appendChild(name);    
+    li.appendChild(name);
+    li.appendChild(date);    
     li.appendChild(time);
     li.appendChild(cross);
 
@@ -26,6 +32,7 @@ function renderList(doc){
         db.collection('reservations').doc(id).delete();
     });
 };
+
 
 db.collection('reservations').get().then((snapshot) => { 
     let hasRes = false;   

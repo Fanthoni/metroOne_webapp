@@ -33,7 +33,7 @@ $(document).ready(function () {
     }))
 
     var temp = JSON.parse(localStorage.getItem("backButton"));
-    alert(temp['toDirect']);
+    //alert(temp['toDirect']);
   });
 
 });

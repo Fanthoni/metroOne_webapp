@@ -56,6 +56,8 @@ It has the following subfolders and files:
     /letter-x.png            # the letter 'x' icon to replace the menu icon when clicked and vice versa
     /metrOneLogo.png         # logo for landing page
     /metrOneLogoText.png     # logo for everywhere else
+    /profile-current.png     # navbar icon when user is currently in the profile page
+    /profile.png             # navbar profile
     /reservation.png         # calendar icon for the reservation button at the navbar
     /reserve-current.png     # calendar icon if the user is currently at the reservation screen
     /settings-current.png    # gear icon if the user is currently at the settings menu

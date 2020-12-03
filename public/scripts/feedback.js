@@ -11,10 +11,12 @@ function storeReview() {
     var review = document.querySelector("#message-text").value;
 
     var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var ddString = String(today.getDate()).padStart(2, "0");
+    var mmString = String(today.getMonth() + 1).padStart(2, "0");
     var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
+    today = mmString + '/' + ddString + '/' + yyyy;
 
 
     submit.style.display = "none";
@@ -25,6 +27,9 @@ function storeReview() {
     db.collection("review").doc().set({
             userFeedback: review,
             reviewDate: today,
+            date: dd,
+            month: mm,
+            year: yyyy,
             userid: localStorage.getItem("thisUserID"),
             storeid: localStorage.getItem("storeID")
         })
@@ -35,7 +40,7 @@ function storeReview() {
             console.error("Error", error);
         })
 
-        db.collection("users")
+    db.collection("users")
 
 }
 
@@ -69,9 +74,10 @@ function getStoreReview(doc) {
 }
 
 // Check if there is any comments about this store
-db.collection('review').get().then(function (snapshot) {
+db.collection('review').orderBy("reviewDate", "desc").get().then(function (snapshot) {
     let hasReview = false;
-    
+
+    // DOM manipulation
     snapshot.forEach(function (doc) {
         // If there is a review about this store
         if (doc.data().storeid == localStorage.getItem("storeID")) {
@@ -93,7 +99,7 @@ function addReview(doc) {
     var explain = $("<div class='desc-review' id ='store-review'></div>");
     let reviewDate = $("<div class='review-date'></div>");
 
-    
+
 
     let userid = doc.data().userid;
     $(".reviews").append(review);

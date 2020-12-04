@@ -6,38 +6,9 @@ const txtbox = document.querySelector("#message-text");
 const reviewtxt = document.querySelector(".form-group");
 const reviewContent = document.querySelector(".review");
 
-// Function called when the user write a review
-function storeReview() {
-    var review = document.querySelector("#message-text").value;
-
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');
-    var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
 
 
-    submit.style.display = "none";
-    thankmsg.style.display = "block";
-    txtbox.style.display = "none";
-    reviewtxt.style.display = "none";
 
-    db.collection("review").doc().set({
-            userFeedback: review,
-            reviewDate: today,
-            userid: localStorage.getItem("thisUserID"),
-            storeid: localStorage.getItem("storeID")
-        })
-        .then(function () {
-            console.log("Successfull!");
-        })
-        .catch(function (error) {
-            console.error("Error", error);
-        })
-
-        db.collection("users")
-
-}
 
 
 // Community DOM manipulation

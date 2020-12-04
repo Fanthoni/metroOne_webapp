@@ -158,7 +158,8 @@ header h1{
     border: none;
 }
 .col-form-label{
-    color: #93BDCF;
+    font-weight: bold;
+    color: #3399ff;
 }
 .modal-footer{
     background-color:#99C1D5 ;

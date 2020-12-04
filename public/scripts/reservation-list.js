@@ -46,7 +46,7 @@ db.collection('reservations').get().then((snapshot) => {
     if (!hasRes){
         // Give message that this user dont have any reservation yet
         let mes = document.createElement('p');
-        mes.textContent = 'You have no reservation.';
-        docList.appendChild(mes);
+        mes.textContent = 'You have no reservations.';
+        $("#res-list").append(mes);
     }
 });

@@ -43,6 +43,10 @@ header {
     z-index: +1;
 }
 
+#store-name{
+    text-align: center;
+}
+
 .logo {
     width: 200px;
     position: absolute;
